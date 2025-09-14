@@ -23,12 +23,8 @@ mixin _$BaseResponseModel {
   int? get code => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
-  /// Serializes this BaseResponseModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BaseResponseModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BaseResponseModelCopyWith<BaseResponseModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,8 +48,6 @@ class _$BaseResponseModelCopyWithImpl<$Res, $Val extends BaseResponseModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BaseResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,8 +86,6 @@ class __$$BaseResponseModelImplCopyWithImpl<$Res>
       $Res Function(_$BaseResponseModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BaseResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,13 +132,11 @@ class _$BaseResponseModelImpl implements _BaseResponseModel {
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, code, message);
 
-  /// Create a copy of BaseResponseModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BaseResponseModelImplCopyWith<_$BaseResponseModelImpl> get copyWith =>
@@ -172,11 +162,8 @@ abstract class _BaseResponseModel implements BaseResponseModel {
   int? get code;
   @override
   String? get message;
-
-  /// Create a copy of BaseResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BaseResponseModelImplCopyWith<_$BaseResponseModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

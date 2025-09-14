@@ -3,7 +3,7 @@ description: "A new Flutter project."
 publish_to: 'none'
 version: 1.0.0+2
 environment:
-  sdk: ^3.8.1
+  sdk: ^3.9.0
 dependencies:
 
   auto_route: 7.8.4
@@ -17,6 +17,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_keyboard_visibility: ^6.0.0
+  flutter_native_splash: ^2.4.6
   flutter_riverpod: ^2.6.1
   flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.4
@@ -28,7 +29,7 @@ dependencies:
   json_annotation: ^4.9.0
   kartal: ^4.2.0
   logger: ^2.6.1
-  lottie: ^2.6.0
+  lottie: ^3.3.2
   path_provider: ^2.1.5
   permission_handler: ^11.3.1
 
@@ -47,3 +48,7 @@ flutter:
   assets:
     - assets/image/
     - assets/translation/
+
+flutter_native_splash:
+  android: false
+  ios: false

@@ -47,12 +47,8 @@ mixin _$MovieModel {
   bool? get ComingSoon => throw _privateConstructorUsedError;
   bool? get isFavorite => throw _privateConstructorUsedError;
 
-  /// Serializes this MovieModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MovieModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MovieModelCopyWith<MovieModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -101,8 +97,6 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MovieModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -281,8 +275,6 @@ class __$$MovieModelImplCopyWithImpl<$Res>
       _$MovieModelImpl _value, $Res Function(_$MovieModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MovieModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -557,7 +549,7 @@ class _$MovieModelImpl implements _MovieModel {
                 other.isFavorite == isFavorite));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -588,9 +580,7 @@ class _$MovieModelImpl implements _MovieModel {
         isFavorite
       ]);
 
-  /// Create a copy of MovieModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MovieModelImplCopyWith<_$MovieModelImpl> get copyWith =>
@@ -686,11 +676,8 @@ abstract class _MovieModel implements MovieModel {
   bool? get ComingSoon;
   @override
   bool? get isFavorite;
-
-  /// Create a copy of MovieModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MovieModelImplCopyWith<_$MovieModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

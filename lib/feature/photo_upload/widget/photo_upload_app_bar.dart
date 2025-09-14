@@ -1,21 +1,19 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
-import 'package:shartflix/generated/locale_keys.g.dart';
 
 class PhotoUploadAppBar extends StatelessWidget
     implements PreferredSizeWidget {
-  const PhotoUploadAppBar({super.key});
-
+  const PhotoUploadAppBar({required this.text, super.key});
+  final String text;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
       title: Text(
-        LocaleKeys.profile_title.tr(),
+        text,
         style: context.textTheme.headlineLarge?.copyWith(
           color: Colors.white,
           fontWeight: FontWeight.bold,

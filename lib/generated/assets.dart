@@ -55,6 +55,7 @@ class Assets {
   static const String imageProfileFill = 'assets/image/Profile-fill.png';
   static const String imageProfilePicContainer =
       'assets/image/profile_pic_container.svg';
+  static const String imageRedHeart = 'assets/image/red_heart.png';
   static const String imageSee = 'assets/image/See.png';
   static const String imageSocialApple = 'assets/image/social_apple.svg';
   static const String imageSocialFacebook =

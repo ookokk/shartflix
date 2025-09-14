@@ -7,17 +7,11 @@ import 'package:shartflix/feature/profile/widget/screen_size_image.dart';
 import 'package:shartflix/product/widget/dialog/try_again_error.dart';
 
 @RoutePage()
-class ExploreView extends ConsumerStatefulWidget {
+class ExploreView extends ConsumerWidget {
   const ExploreView({super.key});
 
   @override
-  ConsumerState<ExploreView> createState() => _ExploreViewState();
-}
-
-class _ExploreViewState extends ConsumerState<ExploreView> {
-  var _currentIndex = 0;
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(exploreProvider);
     if (state.isError) {
       return TryAgainError(
@@ -28,7 +22,6 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
       return const Center(child: CircularProgressIndicator.adaptive());
     }
     return Scaffold(
-      backgroundColor: Colors.transparent,
       body: Stack(
         children: [
           PageView.builder(
@@ -38,7 +31,8 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
               return ScreenSizeImage(imageUrl: state.movies[index].Poster);
             },
             onPageChanged: (value) {
-              _currentIndex = value;
+              ref.read(exploreProvider.notifier).setCurrentIndex(value);
+
               if (value >= state.movies.length - 2 &&
                   !state.isLoading &&
                   state.currentPage < state.maxPage) {
@@ -50,7 +44,7 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
             },
           ),
           if (state.movies.isNotEmpty)
-            InformationBar(index: _currentIndex),
+            InformationBar(index: state.currentIndex),
           if (state.isLoading && state.movies.isNotEmpty)
             const Positioned(
               bottom: 100,

@@ -24,12 +24,8 @@ mixin _$MovieFavResponseModel {
   BaseResponseModel? get response => throw _privateConstructorUsedError;
   MovieFavDataModel? get data => throw _privateConstructorUsedError;
 
-  /// Serializes this MovieFavResponseModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MovieFavResponseModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MovieFavResponseModelCopyWith<MovieFavResponseModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,8 +53,6 @@ class _$MovieFavResponseModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MovieFavResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -77,8 +71,6 @@ class _$MovieFavResponseModelCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of MovieFavResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BaseResponseModelCopyWith<$Res>? get response {
@@ -91,8 +83,6 @@ class _$MovieFavResponseModelCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of MovieFavResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MovieFavDataModelCopyWith<$Res>? get data {
@@ -132,8 +122,6 @@ class __$$MovieFavResponseModelImplCopyWithImpl<$Res>
       $Res Function(_$MovieFavResponseModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MovieFavResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,13 +169,11 @@ class _$MovieFavResponseModelImpl implements _MovieFavResponseModel {
             (identical(other.data, data) || other.data == data));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, response, data);
 
-  /// Create a copy of MovieFavResponseModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MovieFavResponseModelImplCopyWith<_$MovieFavResponseModelImpl>
@@ -214,11 +200,8 @@ abstract class _MovieFavResponseModel implements MovieFavResponseModel {
   BaseResponseModel? get response;
   @override
   MovieFavDataModel? get data;
-
-  /// Create a copy of MovieFavResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MovieFavResponseModelImplCopyWith<_$MovieFavResponseModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -232,12 +215,8 @@ mixin _$MovieFavDataModel {
   MovieModel? get movie => throw _privateConstructorUsedError;
   String? get action => throw _privateConstructorUsedError;
 
-  /// Serializes this MovieFavDataModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MovieFavDataModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MovieFavDataModelCopyWith<MovieFavDataModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -263,8 +242,6 @@ class _$MovieFavDataModelCopyWithImpl<$Res, $Val extends MovieFavDataModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MovieFavDataModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -283,8 +260,6 @@ class _$MovieFavDataModelCopyWithImpl<$Res, $Val extends MovieFavDataModel>
     ) as $Val);
   }
 
-  /// Create a copy of MovieFavDataModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MovieModelCopyWith<$Res>? get movie {
@@ -320,8 +295,6 @@ class __$$MovieFavDataModelImplCopyWithImpl<$Res>
       $Res Function(_$MovieFavDataModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MovieFavDataModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -368,13 +341,11 @@ class _$MovieFavDataModelImpl implements _MovieFavDataModel {
             (identical(other.action, action) || other.action == action));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, movie, action);
 
-  /// Create a copy of MovieFavDataModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MovieFavDataModelImplCopyWith<_$MovieFavDataModelImpl> get copyWith =>
@@ -400,11 +371,8 @@ abstract class _MovieFavDataModel implements MovieFavDataModel {
   MovieModel? get movie;
   @override
   String? get action;
-
-  /// Create a copy of MovieFavDataModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MovieFavDataModelImplCopyWith<_$MovieFavDataModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

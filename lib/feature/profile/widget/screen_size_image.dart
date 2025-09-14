@@ -1,10 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
 
-class ScreenSizeImage extends StatelessWidget {
+class ScreenSizeImage extends ConsumerWidget {
   const ScreenSizeImage({
     this.imageUrl,
     this.errorText = 'Image could not be loaded',
@@ -15,7 +16,7 @@ class ScreenSizeImage extends StatelessWidget {
   final String errorText;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     if (imageUrl == null || imageUrl!.isEmpty) {
       return Center(
         child: Text(

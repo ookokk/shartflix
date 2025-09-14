@@ -10,8 +10,12 @@ abstract class  LocaleKeys {
   static const sign_welcome_title = 'sign_welcome_title';
   static const okay = 'okay';
   static const cancel = 'cancel';
+  static const warning_question = 'warning_question';
+  static const settings_appbar = 'settings_appbar';
   static const success = 'success';
+  static const signOut = 'signOut';
   static const changeLanguage = 'changeLanguage';
+  static const areYouSureSignOut = 'areYouSureSignOut';
   static const yes = 'yes';
   static const there_is_no_film_yet = 'there_is_no_film_yet';
   static const no = 'no';

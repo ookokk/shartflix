@@ -21,10 +21,9 @@ mixin _$ExploreState {
   int get maxPage => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
+  int get currentIndex => throw _privateConstructorUsedError;
 
-  /// Create a copy of ExploreState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ExploreStateCopyWith<ExploreState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -40,7 +39,8 @@ abstract class $ExploreStateCopyWith<$Res> {
       int currentPage,
       int maxPage,
       bool isLoading,
-      bool isError});
+      bool isError,
+      int currentIndex});
 }
 
 /// @nodoc
@@ -53,8 +53,6 @@ class _$ExploreStateCopyWithImpl<$Res, $Val extends ExploreState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ExploreState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -63,6 +61,7 @@ class _$ExploreStateCopyWithImpl<$Res, $Val extends ExploreState>
     Object? maxPage = null,
     Object? isLoading = null,
     Object? isError = null,
+    Object? currentIndex = null,
   }) {
     return _then(_value.copyWith(
       movies: null == movies
@@ -85,6 +84,10 @@ class _$ExploreStateCopyWithImpl<$Res, $Val extends ExploreState>
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentIndex: null == currentIndex
+          ? _value.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -102,7 +105,8 @@ abstract class _$$ExploreStateImplCopyWith<$Res>
       int currentPage,
       int maxPage,
       bool isLoading,
-      bool isError});
+      bool isError,
+      int currentIndex});
 }
 
 /// @nodoc
@@ -113,8 +117,6 @@ class __$$ExploreStateImplCopyWithImpl<$Res>
       _$ExploreStateImpl _value, $Res Function(_$ExploreStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ExploreState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -123,6 +125,7 @@ class __$$ExploreStateImplCopyWithImpl<$Res>
     Object? maxPage = null,
     Object? isLoading = null,
     Object? isError = null,
+    Object? currentIndex = null,
   }) {
     return _then(_$ExploreStateImpl(
       movies: null == movies
@@ -145,6 +148,10 @@ class __$$ExploreStateImplCopyWithImpl<$Res>
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentIndex: null == currentIndex
+          ? _value.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -157,7 +164,8 @@ class _$ExploreStateImpl implements _ExploreState {
       this.currentPage = 1,
       this.maxPage = 1,
       this.isLoading = false,
-      this.isError = false})
+      this.isError = false,
+      this.currentIndex = 0})
       : _movies = movies;
 
   final List<MovieModel> _movies;
@@ -181,10 +189,13 @@ class _$ExploreStateImpl implements _ExploreState {
   @override
   @JsonKey()
   final bool isError;
+  @override
+  @JsonKey()
+  final int currentIndex;
 
   @override
   String toString() {
-    return 'ExploreState(movies: $movies, currentPage: $currentPage, maxPage: $maxPage, isLoading: $isLoading, isError: $isError)';
+    return 'ExploreState(movies: $movies, currentPage: $currentPage, maxPage: $maxPage, isLoading: $isLoading, isError: $isError, currentIndex: $currentIndex)';
   }
 
   @override
@@ -198,7 +209,9 @@ class _$ExploreStateImpl implements _ExploreState {
             (identical(other.maxPage, maxPage) || other.maxPage == maxPage) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.isError, isError) || other.isError == isError));
+            (identical(other.isError, isError) || other.isError == isError) &&
+            (identical(other.currentIndex, currentIndex) ||
+                other.currentIndex == currentIndex));
   }
 
   @override
@@ -208,11 +221,10 @@ class _$ExploreStateImpl implements _ExploreState {
       currentPage,
       maxPage,
       isLoading,
-      isError);
+      isError,
+      currentIndex);
 
-  /// Create a copy of ExploreState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ExploreStateImplCopyWith<_$ExploreStateImpl> get copyWith =>
@@ -225,7 +237,8 @@ abstract class _ExploreState implements ExploreState {
       final int currentPage,
       final int maxPage,
       final bool isLoading,
-      final bool isError}) = _$ExploreStateImpl;
+      final bool isError,
+      final int currentIndex}) = _$ExploreStateImpl;
 
   @override
   List<MovieModel> get movies;
@@ -237,11 +250,10 @@ abstract class _ExploreState implements ExploreState {
   bool get isLoading;
   @override
   bool get isError;
-
-  /// Create a copy of ExploreState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  int get currentIndex;
+  @override
+  @JsonKey(ignore: true)
   _$$ExploreStateImplCopyWith<_$ExploreStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

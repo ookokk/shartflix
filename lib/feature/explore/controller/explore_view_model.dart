@@ -42,7 +42,6 @@ class ExploreViewModel extends StateNotifier<ExploreState> {
 
   Future<void> likeMovie(MovieModel movie, WidgetRef ref) async {
     final currentFav = movie.isFavorite ?? false;
-
     // 1️⃣ UI update
     state = state.copyWith(
       movies: state.movies.map((m) {
@@ -50,7 +49,6 @@ class ExploreViewModel extends StateNotifier<ExploreState> {
         return m;
       }).toList(),
     );
-
     // 2️⃣ API Request
     final res = await MovieService.instance.favorite(movieId: movie.id!);
     if (res?.response?.code == null || res!.response!.code! >= 400) {
@@ -64,6 +62,10 @@ class ExploreViewModel extends StateNotifier<ExploreState> {
     } else {
       await ref.read(profileProvider.notifier).fetchInitial();
     }
+  }
+
+  void setCurrentIndex(int index) {
+    state = state.copyWith(currentIndex: index);
   }
 }
 

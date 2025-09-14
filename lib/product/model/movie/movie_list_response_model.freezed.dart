@@ -24,12 +24,8 @@ mixin _$MovieListResponseModel {
   BaseResponseModel? get response => throw _privateConstructorUsedError;
   MovieListData? get data => throw _privateConstructorUsedError;
 
-  /// Serializes this MovieListResponseModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MovieListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MovieListResponseModelCopyWith<MovieListResponseModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,8 +53,6 @@ class _$MovieListResponseModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MovieListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -77,8 +71,6 @@ class _$MovieListResponseModelCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of MovieListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BaseResponseModelCopyWith<$Res>? get response {
@@ -91,8 +83,6 @@ class _$MovieListResponseModelCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of MovieListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MovieListDataCopyWith<$Res>? get data {
@@ -133,8 +123,6 @@ class __$$MovieListResponseModelImplCopyWithImpl<$Res>
       $Res Function(_$MovieListResponseModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MovieListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -182,13 +170,11 @@ class _$MovieListResponseModelImpl implements _MovieListResponseModel {
             (identical(other.data, data) || other.data == data));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, response, data);
 
-  /// Create a copy of MovieListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MovieListResponseModelImplCopyWith<_$MovieListResponseModelImpl>
@@ -215,11 +201,8 @@ abstract class _MovieListResponseModel implements MovieListResponseModel {
   BaseResponseModel? get response;
   @override
   MovieListData? get data;
-
-  /// Create a copy of MovieListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MovieListResponseModelImplCopyWith<_$MovieListResponseModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -233,12 +216,8 @@ mixin _$MovieListData {
   List<MovieModel>? get movies => throw _privateConstructorUsedError;
   PaginationModel? get pagination => throw _privateConstructorUsedError;
 
-  /// Serializes this MovieListData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MovieListData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MovieListDataCopyWith<MovieListData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -264,8 +243,6 @@ class _$MovieListDataCopyWithImpl<$Res, $Val extends MovieListData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MovieListData
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -284,8 +261,6 @@ class _$MovieListDataCopyWithImpl<$Res, $Val extends MovieListData>
     ) as $Val);
   }
 
-  /// Create a copy of MovieListData
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PaginationModelCopyWith<$Res>? get pagination {
@@ -321,8 +296,6 @@ class __$$MovieListDataImplCopyWithImpl<$Res>
       _$MovieListDataImpl _value, $Res Function(_$MovieListDataImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MovieListData
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -379,14 +352,12 @@ class _$MovieListDataImpl implements _MovieListData {
                 other.pagination == pagination));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_movies), pagination);
 
-  /// Create a copy of MovieListData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MovieListDataImplCopyWith<_$MovieListDataImpl> get copyWith =>
@@ -412,11 +383,8 @@ abstract class _MovieListData implements MovieListData {
   List<MovieModel>? get movies;
   @override
   PaginationModel? get pagination;
-
-  /// Create a copy of MovieListData
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MovieListDataImplCopyWith<_$MovieListDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -432,12 +400,8 @@ mixin _$PaginationModel {
   int? get maxPage => throw _privateConstructorUsedError;
   int? get currentPage => throw _privateConstructorUsedError;
 
-  /// Serializes this PaginationModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of PaginationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $PaginationModelCopyWith<PaginationModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -461,8 +425,6 @@ class _$PaginationModelCopyWithImpl<$Res, $Val extends PaginationModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of PaginationModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -511,8 +473,6 @@ class __$$PaginationModelImplCopyWithImpl<$Res>
       _$PaginationModelImpl _value, $Res Function(_$PaginationModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PaginationModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -578,14 +538,12 @@ class _$PaginationModelImpl implements _PaginationModel {
                 other.currentPage == currentPage));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, totalCount, perPage, maxPage, currentPage);
 
-  /// Create a copy of PaginationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$PaginationModelImplCopyWith<_$PaginationModelImpl> get copyWith =>
@@ -618,11 +576,8 @@ abstract class _PaginationModel implements PaginationModel {
   int? get maxPage;
   @override
   int? get currentPage;
-
-  /// Create a copy of PaginationModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$PaginationModelImplCopyWith<_$PaginationModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

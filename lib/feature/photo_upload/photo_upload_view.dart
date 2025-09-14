@@ -24,7 +24,7 @@ class PhotoUploadView extends ConsumerWidget {
     final state = ref.watch(photoUploadProvider);
     final viewModel = ref.read(photoUploadProvider.notifier);
     return Scaffold(
-      appBar: const PhotoUploadAppBar(),
+      appBar: PhotoUploadAppBar(text: LocaleKeys.profile_title.tr()),
       extendBodyBehindAppBar: true,
       body: CircleGradientBackground(
         child: SafeArea(

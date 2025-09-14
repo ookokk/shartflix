@@ -11,5 +11,6 @@ class ExploreState with _$ExploreState {
     @Default(1) int maxPage,
     @Default(false) bool isLoading,
     @Default(false) bool isError,
+    @Default(0) int currentIndex,
   }) = _ExploreState;
 }

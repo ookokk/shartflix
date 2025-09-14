@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
+import 'package:shartflix/core/router/app_router.gr.dart';
 import 'package:shartflix/feature/profile/controller/profile_view_model.dart';
 import 'package:shartflix/feature/profile/widget/favorite_movies.dart';
 import 'package:shartflix/feature/profile/widget/profile_app_bar.dart';
 import 'package:shartflix/feature/profile/widget/profile_card.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
-import 'package:shartflix/product/widget/dialog/change_language_dialog.dart';
 import 'package:shartflix/product/widget/dialog/try_again_error.dart';
 import 'package:shartflix/product/widget/responsive/red_black_gradient_background.dart';
 
@@ -52,8 +52,9 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () => ChangeLanguageDialog().show(context),
-                    icon: const Icon(Icons.language, color: Colors.white),
+                    onPressed: () =>
+                        context.router.push(const SettingsRoute()),
+                    icon: const Icon(Icons.settings, color: Colors.white),
                   ),
                 ],
               ),

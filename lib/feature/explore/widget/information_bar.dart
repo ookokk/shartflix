@@ -7,9 +7,7 @@ import 'package:shartflix/generated/assets.dart';
 
 class InformationBar extends ConsumerWidget {
   const InformationBar({required this.index, super.key});
-
   final int index;
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final movie = ref.watch(exploreProvider).movies[index];
@@ -41,9 +39,8 @@ class InformationBar extends ConsumerWidget {
                     .likeMovie(movie, ref),
                 icon: Image.asset(
                   movie.isFavorite ?? false
-                      ? Assets.imageHeartFill
+                      ? Assets.imageRedHeart
                       : Assets.imageHeart,
-                  color: Colors.white,
                   height: 25,
                 ),
                 style: IconButton.styleFrom(

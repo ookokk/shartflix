@@ -21,9 +21,7 @@ mixin _$PhotoUploadState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isImageUploaded => throw _privateConstructorUsedError;
 
-  /// Create a copy of PhotoUploadState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $PhotoUploadStateCopyWith<PhotoUploadState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,8 +46,6 @@ class _$PhotoUploadStateCopyWithImpl<$Res, $Val extends PhotoUploadState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of PhotoUploadState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,8 +95,6 @@ class __$$PhotoUploadStateImplCopyWithImpl<$Res>
       $Res Function(_$PhotoUploadStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PhotoUploadState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -174,9 +168,7 @@ class _$PhotoUploadStateImpl implements _PhotoUploadState {
   int get hashCode => Object.hash(
       runtimeType, image, isImagePicked, isLoading, isImageUploaded);
 
-  /// Create a copy of PhotoUploadState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$PhotoUploadStateImplCopyWith<_$PhotoUploadStateImpl> get copyWith =>
@@ -199,11 +191,8 @@ abstract class _PhotoUploadState implements PhotoUploadState {
   bool get isLoading;
   @override
   bool get isImageUploaded;
-
-  /// Create a copy of PhotoUploadState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$PhotoUploadStateImplCopyWith<_$PhotoUploadStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

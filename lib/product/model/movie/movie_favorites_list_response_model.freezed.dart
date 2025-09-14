@@ -24,12 +24,8 @@ mixin _$MovieFavoritesListResponseModel {
   BaseResponseModel? get response => throw _privateConstructorUsedError;
   List<MovieModel?>? get data => throw _privateConstructorUsedError;
 
-  /// Serializes this MovieFavoritesListResponseModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MovieFavoritesListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MovieFavoritesListResponseModelCopyWith<MovieFavoritesListResponseModel>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -58,8 +54,6 @@ class _$MovieFavoritesListResponseModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MovieFavoritesListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -78,8 +72,6 @@ class _$MovieFavoritesListResponseModelCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of MovieFavoritesListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BaseResponseModelCopyWith<$Res>? get response {
@@ -118,8 +110,6 @@ class __$$MovieFavoritesListResponseModelImplCopyWithImpl<$Res>
       $Res Function(_$MovieFavoritesListResponseModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MovieFavoritesListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -178,14 +168,12 @@ class _$MovieFavoritesListResponseModelImpl
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, response, const DeepCollectionEquality().hash(_data));
 
-  /// Create a copy of MovieFavoritesListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MovieFavoritesListResponseModelImplCopyWith<
@@ -214,11 +202,8 @@ abstract class _MovieFavoritesListResponseModel
   BaseResponseModel? get response;
   @override
   List<MovieModel?>? get data;
-
-  /// Create a copy of MovieFavoritesListResponseModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MovieFavoritesListResponseModelImplCopyWith<
           _$MovieFavoritesListResponseModelImpl>
       get copyWith => throw _privateConstructorUsedError;

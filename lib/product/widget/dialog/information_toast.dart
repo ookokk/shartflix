@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shartflix/core/const/extensions/context_extension.dart';
 
 class InformationToast {
-  void show(BuildContext context, String text) {
+  void show(BuildContext context, String text, Color bgColor) {
     final overlay = Overlay.of(context);
     late final OverlayEntry overlayEntry;
     overlayEntry = OverlayEntry(
       builder: (context) => _NotificationWidget(
         text: text,
+        bgColor: bgColor,
         onRemove: () => overlayEntry.remove(),
       ),
     );
@@ -16,9 +17,14 @@ class InformationToast {
 }
 
 class _NotificationWidget extends StatefulWidget {
-  const _NotificationWidget({required this.text, required this.onRemove});
+  const _NotificationWidget({
+    required this.text,
+    required this.bgColor,
+    required this.onRemove,
+  });
 
   final String text;
+  final Color bgColor;
   final VoidCallback onRemove;
 
   @override
@@ -79,7 +85,7 @@ class _NotificationWidgetState extends State<_NotificationWidget>
               vertical: 1,
             ),
             decoration: BoxDecoration(
-              color: const Color(0xFF1F1F2E),
+              color: widget.bgColor,
               borderRadius: BorderRadius.circular(15),
             ),
             child: ListTile(

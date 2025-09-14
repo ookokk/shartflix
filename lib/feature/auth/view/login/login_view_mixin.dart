@@ -24,13 +24,19 @@ mixin _LoginViewMixin on ConsumerState<LoginView> {
       } else {
         final errorMsg =
             res?.response?.message ?? LocaleKeys.an_error_occurred.tr();
-        WarningAlert().show(context, errorMsg, true);
+        WarningAlert().show(
+          context,
+          errorMsg,
+          true,
+          AlertDialogColors.error,
+        );
       }
     }
     WarningAlert().show(
       context,
       LocaleKeys.sign_password_not_match.tr(),
       true,
+      AlertDialogColors.error,
     );
   }
 

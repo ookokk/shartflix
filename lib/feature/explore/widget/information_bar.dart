@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
-import 'package:shartflix/feature/explore/widget/favorite_button.dart';
+import 'package:shartflix/feature/explore/controller/explore_view_model.dart';
 import 'package:shartflix/feature/explore/widget/information_tile.dart';
-import 'package:shartflix/product/model/movie/movie_model.dart';
+import 'package:shartflix/generated/assets.dart';
 
-class InformationBar extends StatelessWidget {
-  const InformationBar({
-    required this.movie,
-    required this.onFavorite,
-    super.key,
-  });
+class InformationBar extends ConsumerWidget {
+  const InformationBar({required this.index, super.key});
 
-  final MovieModel? movie;
-  final void Function(MovieModel? movie) onFavorite;
+  final int index;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final movie = ref.watch(exploreProvider).movies[index];
     return Stack(
       children: [
         IgnorePointer(
@@ -38,16 +35,26 @@ class InformationBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              FavoriteButton(
-                isFavorite: movie?.isFavorite ?? false,
-                onPressed: () {
-                  onFavorite(movie);
-                },
+              IconButton.outlined(
+                onPressed: () => ref
+                    .read(exploreProvider.notifier)
+                    .likeMovie(movie, ref),
+                icon: Image.asset(
+                  movie.isFavorite ?? false
+                      ? Assets.imageHeartFill
+                      : Assets.imageHeart,
+                  color: Colors.white,
+                  height: 25,
+                ),
+                style: IconButton.styleFrom(
+                  side: const BorderSide(color: Colors.grey),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: CustomAppSizes.large,
+                    horizontal: CustomAppSizes.medium,
+                  ),
+                ),
               ),
-              InformationTile(
-                title: movie?.Title,
-                description: movie?.Plot,
-              ),
+              InformationTile(title: movie.Title, description: movie.Plot),
             ],
           ),
         ),

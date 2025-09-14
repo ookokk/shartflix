@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
 import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
+import 'package:shartflix/generated/locale_keys.g.dart';
 
 class ScreenSizeImage extends StatelessWidget {
   const ScreenSizeImage({
@@ -16,18 +16,20 @@ class ScreenSizeImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final logger = Logger();
     if (imageUrl == null || imageUrl!.isEmpty) {
-      logger.e('Image URL is null or empty');
+      return Center(
+        child: Text(
+          LocaleKeys.an_error_occurred,
+          style: context.textTheme.titleMedium,
+        ),
+      );
     }
     return CachedNetworkImage(
-      imageUrl: imageUrl?.replaceFirst('http://', 'https://') ?? '',
-
+      imageUrl: imageUrl!.replaceFirst('http://', 'https://'),
       fit: BoxFit.cover,
       placeholder: (context, url) =>
           const Center(child: CircularProgressIndicator.adaptive()),
       errorWidget: (context, url, error) {
-        logger.e('Bad url: $url', error: error);
         return DecoratedBox(
           decoration: BoxDecoration(
             color: context.colorScheme.errorContainer,

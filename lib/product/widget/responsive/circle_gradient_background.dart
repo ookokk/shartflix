@@ -16,7 +16,7 @@ class CircleGradientBackground extends StatelessWidget {
           colors: [
             Color(0xFFFF1B1B),
             Color(0xFF8D0000),
-            Color(0xFF000000),
+            Color(0xFF330505),
           ],
           stops: [0.0, 0.3, 1.0],
         ),

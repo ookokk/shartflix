@@ -25,7 +25,7 @@ class NavBarButton extends StatelessWidget {
       },
       style: FilledButton.styleFrom(
         side: BorderSide(color: isActive ? Colors.red : Colors.grey),
-        padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 34),
         backgroundColor: isActive ? Colors.red : Colors.black87,
       ),
       child: Row(

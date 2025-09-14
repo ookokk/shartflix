@@ -11,6 +11,7 @@ abstract class  LocaleKeys {
   static const okay = 'okay';
   static const cancel = 'cancel';
   static const success = 'success';
+  static const changeLanguage = 'changeLanguage';
   static const yes = 'yes';
   static const there_is_no_film_yet = 'there_is_no_film_yet';
   static const no = 'no';
@@ -42,6 +43,9 @@ abstract class  LocaleKeys {
   static const tile_show_more = 'tile_show_more';
   static const tile_show_less = 'tile_show_less';
   static const pick_bottom_sheet_pick_camera = 'pick_bottom_sheet_pick_camera';
+  static const english_lang = 'english_lang';
+  static const turkish_lang = 'turkish_lang';
+  static const german_lang = 'german_lang';
   static const pick_bottom_sheet_pick_gallery = 'pick_bottom_sheet_pick_gallery';
   static const bottom_sheet_offer_title = 'bottom_sheet_offer_title';
   static const bottom_sheet_offer_message = 'bottom_sheet_offer_message';

@@ -4,9 +4,9 @@ import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
 
 class TryAgainError extends StatelessWidget {
-  const TryAgainError({required this.onTap, super.key});
+  const TryAgainError({this.onTap, super.key});
 
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

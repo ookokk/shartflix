@@ -9,6 +9,7 @@ import 'package:shartflix/feature/profile/widget/favorite_movies.dart';
 import 'package:shartflix/feature/profile/widget/profile_app_bar.dart';
 import 'package:shartflix/feature/profile/widget/profile_card.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
+import 'package:shartflix/product/widget/dialog/change_language_dialog.dart';
 import 'package:shartflix/product/widget/dialog/try_again_error.dart';
 import 'package:shartflix/product/widget/responsive/red_black_gradient_background.dart';
 
@@ -25,7 +26,7 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
   Widget build(BuildContext context) {
     final state = ref.watch(profileProvider);
     if (state.isError) {
-      return TryAgainError(onTap: () {});
+      return const TryAgainError();
     }
     if (state.isLoading && state.currentUser == null) {
       return const Center(child: CircularProgressIndicator.adaptive());
@@ -40,12 +41,21 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
             spacing: CustomAppSizes.medium,
             children: [
               ProfileCard(userModel: state.currentUser!),
-              Text(
-                LocaleKeys.favorite_movies.tr(),
-                style: context.textTheme.headlineLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    LocaleKeys.favorite_movies.tr(),
+                    style: context.textTheme.headlineLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () => ChangeLanguageDialog().show(context),
+                    icon: const Icon(Icons.language, color: Colors.white),
+                  ),
+                ],
               ),
               FavoriteMovies(
                 movies: state.favoritesList?.data ?? [],

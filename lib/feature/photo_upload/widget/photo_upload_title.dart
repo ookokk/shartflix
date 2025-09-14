@@ -11,27 +11,30 @@ class PhotoUploadTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        20.verticalSpace,
-        SvgPicture.asset(Assets.imageProfilePicContainer),
-        10.verticalSpace,
-        Text(
-          LocaleKeys.sign_upload_image_title.tr(),
-          style: context.textTheme.displayMedium?.copyWith(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
+    return SizedBox(
+      width: context.media.size.width / 2.5,
+      child: Column(
+        children: [
+          20.verticalSpace,
+          SvgPicture.asset(Assets.imageProfilePicContainer),
+          10.verticalSpace,
+          Text(
+            LocaleKeys.sign_upload_image_title.tr(),
+            style: context.textTheme.displayMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
-        ),
-        10.verticalSpace,
-        Text(
-          LocaleKeys.profile_photo_image_add.tr(),
-          style: context.textTheme.headlineSmall?.copyWith(
-            color: Colors.white,
+          10.verticalSpace,
+          Text(
+            LocaleKeys.profile_photo_image_add.tr(),
+            style: context.textTheme.headlineSmall?.copyWith(
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

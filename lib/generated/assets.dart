@@ -16,13 +16,16 @@ class Assets {
   static const String imageCoin1 = 'assets/image/coin1.svg';
   static const String imageCoin2 = 'assets/image/coin2.svg';
   static const String imageCoin3 = 'assets/image/coin3.svg';
+  static const String imageFrance = 'assets/image/france.svg';
   static const String imageGem = 'assets/image/Gem.png';
+  static const String imageGermany = 'assets/image/germany.svg';
   static const String imageHeart = 'assets/image/heart.png';
   static const String imageHeartFill = 'assets/image/Heart-fill.png';
   static const String imageHide = 'assets/image/Hide.png';
   static const String imageHome = 'assets/image/Home.png';
   static const String imageHomeFill = 'assets/image/Home-fill.png';
   static const String imageIcon = 'assets/image/Icon.jpg';
+  static const String imageItaly = 'assets/image/italy.svg';
   static const String imageLogin1 = 'assets/image/login1.svg';
   static const String imageLogin1png = 'assets/image/login1png.jpg';
   static const String imageLogin2 = 'assets/image/login2.svg';
@@ -46,6 +49,8 @@ class Assets {
       'assets/image/offer_icon_up_arrow.png';
   static const String imagePlus = 'assets/image/Plus.png';
   static const String imagePlusIcon = 'assets/image/plus_icon.png';
+  static const String imagePoland = 'assets/image/poland.svg';
+  static const String imagePortugal = 'assets/image/portugal.svg';
   static const String imageProfile = 'assets/image/Profile.png';
   static const String imageProfileFill = 'assets/image/Profile-fill.png';
   static const String imageProfilePicContainer =
@@ -55,10 +60,14 @@ class Assets {
   static const String imageSocialFacebook =
       'assets/image/social_facebook.svg';
   static const String imageSocialGoogle = 'assets/image/social_google.svg';
+  static const String imageSpain = 'assets/image/spain.svg';
   static const String imageSuperman = 'assets/image/superman.svg';
   static const String imageSuperman2 = 'assets/image/superman2.svg';
+  static const String imageTurkey = 'assets/image/turkey.svg';
   static const String imageUnlock = 'assets/image/unlock.png';
+  static const String imageUs = 'assets/image/us.svg';
   static const String imageX = 'assets/image/X.png';
+  static const String translationDe = 'assets/translation/de.json';
   static const String translationEn = 'assets/translation/en.json';
   static const String translationTr = 'assets/translation/tr.json';
 }

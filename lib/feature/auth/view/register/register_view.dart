@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shartflix/core/const/enums/alert_dialog_colors.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
 import 'package:shartflix/feature/auth/controller/auth_view_model.dart';

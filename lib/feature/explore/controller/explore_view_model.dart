@@ -1,5 +1,6 @@
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shartflix/feature/explore/controller/explore_state.dart';
+import 'package:shartflix/feature/profile/controller/profile_view_model.dart';
 import 'package:shartflix/product/model/movie/movie_model.dart';
 import 'package:shartflix/product/service/movie_service.dart';
 
@@ -39,10 +40,10 @@ class ExploreViewModel extends StateNotifier<ExploreState> {
     }
   }
 
-  Future<void> likeMovie(MovieModel movie) async {
+  Future<void> likeMovie(MovieModel movie, WidgetRef ref) async {
     final currentFav = movie.isFavorite ?? false;
 
-    // Optimistic update
+    // 1️⃣ UI update
     state = state.copyWith(
       movies: state.movies.map((m) {
         if (m.id == movie.id) return m.copyWith(isFavorite: !currentFav);
@@ -50,15 +51,18 @@ class ExploreViewModel extends StateNotifier<ExploreState> {
       }).toList(),
     );
 
+    // 2️⃣ API Request
     final res = await MovieService.instance.favorite(movieId: movie.id!);
     if (res?.response?.code == null || res!.response!.code! >= 400) {
-      // Revert if failed
+      // 3️⃣ Api false response
       state = state.copyWith(
         movies: state.movies.map((m) {
           if (m.id == movie.id) return m.copyWith(isFavorite: currentFav);
           return m;
         }).toList(),
       );
+    } else {
+      await ref.read(profileProvider.notifier).fetchInitial();
     }
   }
 }

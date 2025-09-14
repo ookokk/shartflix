@@ -4,10 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shartflix/feature/explore/controller/explore_view_model.dart';
 import 'package:shartflix/feature/explore/widget/information_bar.dart';
 import 'package:shartflix/feature/profile/widget/screen_size_image.dart';
-import 'package:shartflix/product/model/movie/movie_model.dart';
 import 'package:shartflix/product/widget/dialog/try_again_error.dart';
-
-part 'explore_view_mixin.dart';
 
 @RoutePage()
 class ExploreView extends ConsumerStatefulWidget {
@@ -17,8 +14,8 @@ class ExploreView extends ConsumerStatefulWidget {
   ConsumerState<ExploreView> createState() => _ExploreViewState();
 }
 
-class _ExploreViewState extends ConsumerState<ExploreView>
-    with _ExploreViewMixin {
+class _ExploreViewState extends ConsumerState<ExploreView> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(exploreProvider);
@@ -53,10 +50,7 @@ class _ExploreViewState extends ConsumerState<ExploreView>
             },
           ),
           if (state.movies.isNotEmpty)
-            InformationBar(
-              movie: state.movies[_currentIndex],
-              onFavorite: _onFavorite,
-            ),
+            InformationBar(index: _currentIndex),
           if (state.isLoading && state.movies.isNotEmpty)
             const Positioned(
               bottom: 100,

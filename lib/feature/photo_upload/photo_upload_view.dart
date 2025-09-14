@@ -23,7 +23,6 @@ class PhotoUploadView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(photoUploadProvider);
     final viewModel = ref.read(photoUploadProvider.notifier);
-
     return Scaffold(
       appBar: const PhotoUploadAppBar(),
       extendBodyBehindAppBar: true,
@@ -41,33 +40,39 @@ class PhotoUploadView extends ConsumerWidget {
                     onTap: viewModel.pickImage,
                   ),
                 ),
+                10.verticalSpace,
+                if (state.image != null)
+                  IconButton(
+                    onPressed: viewModel.removeImage,
+                    icon: const Icon(
+                      Icons.cancel_outlined,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
                 const Spacer(),
-                PhotoUploadButton(
-                  onTap: () async {
-                    final success = await viewModel.uploadPhoto(
-                      context,
-                      ref,
-                    );
-                    if (success && !isNewRegistered) {
-                      await context.router.pushAndPopUntil(
-                        const MainRoute(),
-                        predicate: (_) => false,
-                      );
-                    }
-                  },
-                  bgColor: Colors.red,
-                  text: state.isLoading
-                      ? const CircularProgressIndicator(
-                          color: Colors.white,
-                        )
-                      : Text(
-                          LocaleKeys.generic_continue.tr(),
-                          style: context.textTheme.headlineMedium
-                              ?.copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                        ),
+                Opacity(
+                  opacity: state.isImagePicked ? 1.0 : 0.3,
+                  child: PhotoUploadButton(
+                    onTap: () {
+                      if (state.isImagePicked) {
+                        viewModel.uploadPhoto(context, ref);
+                      }
+                    },
+                    bgColor: Colors.red,
+                    text: state.isLoading
+                        ? const CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : Text(
+                            LocaleKeys.generic_continue.tr(),
+                            style: context.textTheme.headlineMedium
+                                ?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                  ),
                 ),
                 if (isNewRegistered)
                   PhotoUploadButton(

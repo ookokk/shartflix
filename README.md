@@ -28,7 +28,7 @@ Shartflix, Flutter ile geliştirilmiş bir film katalog uygulaması olarak tasar
 ---
 
 ## Folder Structure
-
+```
 lib/
 ├── app.dart
 ├── bootstrap.dart
@@ -47,7 +47,7 @@ lib/
 │ └── settings
 ├── product/
 │ ├── model
-│ ├── servic
+│ ├── service
 │ └── widget
 
-
+```

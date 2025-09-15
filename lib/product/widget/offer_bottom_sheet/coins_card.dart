@@ -25,11 +25,10 @@ class CoinsCard extends StatelessWidget {
         ),
         Row(
           spacing: CustomAppSizes.medium,
-          mainAxisSize: MainAxisSize.min,
           children: [
-            SvgPicture.asset(Assets.imageCoin1),
-            SvgPicture.asset(Assets.imageCoin2),
-            SvgPicture.asset(Assets.imageCoin3),
+            Expanded(child: SvgPicture.asset(Assets.imageCoin1)),
+            Expanded(child: SvgPicture.asset(Assets.imageCoin2)),
+            Expanded(child: SvgPicture.asset(Assets.imageCoin3)),
           ],
         ),
       ],

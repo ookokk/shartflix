@@ -13,7 +13,6 @@ class LoginTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        10.verticalSpace,
         SvgPicture.asset(
           Assets.imageAppIcon,
           height: context.media.size.height * 0.14,
@@ -30,9 +29,7 @@ class LoginTitle extends StatelessWidget {
         Text(
           LocaleKeys.sing_with_your_info.tr(),
           textAlign: TextAlign.center,
-          style: context.textTheme.labelLarge?.copyWith(
-            color: Colors.white,
-          ),
+          style: context.textTheme.labelLarge?.copyWith(color: Colors.white),
         ),
       ],
     );

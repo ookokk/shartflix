@@ -8,6 +8,7 @@ class LightThemeManager implements CustomTheme {
   ThemeData get themeData => ThemeData(
     useMaterial3: true,
     colorScheme: AppColorScheme.lightColorScheme,
+    cardColor: Colors.blue,
     scaffoldBackgroundColor: AppColorScheme.lightColorScheme.surface,
     canvasColor: AppColorScheme.lightColorScheme.surface,
     textTheme: TextTheme(
@@ -17,9 +18,7 @@ class LightThemeManager implements CustomTheme {
       displayMedium: AppTextStyle.headline24.copyWith(color: Colors.black),
       displaySmall: AppTextStyle.headline20.copyWith(color: Colors.black),
       headlineLarge: AppTextStyle.headline18.copyWith(color: Colors.black),
-      headlineMedium: AppTextStyle.headline16.copyWith(
-        color: Colors.black,
-      ),
+      headlineMedium: AppTextStyle.headline16.copyWith(color: Colors.black),
       headlineSmall: AppTextStyle.headline14.copyWith(color: Colors.black),
       labelLarge: AppTextStyle.headline12.copyWith(color: Colors.black),
       labelMedium: AppTextStyle.headline10.copyWith(color: Colors.black),

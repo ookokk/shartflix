@@ -8,8 +8,8 @@ import 'package:shartflix/core/const/enums/alert_dialog_colors.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
 import 'package:shartflix/feature/auth/view/login/widget/go_to_register_button.dart';
-import 'package:shartflix/feature/auth/view/login/widget/login_animation_movies.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_form.dart';
+import 'package:shartflix/feature/auth/view/login/widget/login_movies_lottie.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_title.dart';
 import 'package:shartflix/feature/auth/view/login/widget/reset_password.dart';
@@ -29,8 +29,7 @@ class LoginView extends ConsumerStatefulWidget {
   ConsumerState<LoginView> createState() => LoginViewState();
 }
 
-class LoginViewState extends ConsumerState<LoginView>
-    with _LoginViewMixin {
+class LoginViewState extends ConsumerState<LoginView> with _LoginViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,8 +42,7 @@ class LoginViewState extends ConsumerState<LoginView>
               padding: AppPaddings.mediumHorizontal,
               child: Column(
                 children: [
-                  const LoginAnimationMovies(),
-                  10.verticalSpace,
+                  const LoginMoviesLottie(),
                   const LoginTitle(),
                   30.verticalSpace,
                   LoginForm(

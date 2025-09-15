@@ -10,6 +10,7 @@ class DarkThemeManager implements CustomTheme {
     scaffoldBackgroundColor: AppColorScheme.darkColorScheme.surface,
     canvasColor: AppColorScheme.darkColorScheme.surface,
     colorScheme: AppColorScheme.darkColorScheme,
+    cardColor: Colors.yellow,
     textTheme: TextTheme(
       bodyLarge: AppTextStyle.headline48.copyWith(color: Colors.white),
       bodyMedium: AppTextStyle.headline40.copyWith(color: Colors.white),
@@ -18,9 +19,7 @@ class DarkThemeManager implements CustomTheme {
       displayMedium: AppTextStyle.headline24.copyWith(color: Colors.white),
       displaySmall: AppTextStyle.headline20.copyWith(color: Colors.white),
       headlineLarge: AppTextStyle.headline18.copyWith(color: Colors.white),
-      headlineMedium: AppTextStyle.headline16.copyWith(
-        color: Colors.white,
-      ),
+      headlineMedium: AppTextStyle.headline16.copyWith(color: Colors.white),
       headlineSmall: AppTextStyle.headline14.copyWith(color: Colors.white),
       labelLarge: AppTextStyle.headline12.copyWith(color: Colors.white),
       labelMedium: AppTextStyle.headline10.copyWith(color: Colors.white),

@@ -1,11 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:shartflix/core/const/enums/locale_enum.dart';
 import 'package:shartflix/feature/settings/widget/dialog_list_tile.dart';
-import 'package:shartflix/generated/assets.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
 
-class ChangeLanguageDialog {
+class ChangeThemeDialog {
   void show(BuildContext context) {
     showModalBottomSheet<Widget>(
       backgroundColor: const Color(0XFF330505),
@@ -26,21 +24,21 @@ class ChangeLanguageDialog {
               children: [
                 DialogListTile(
                   context: context,
-                  locale: Locales.en,
-                  svgPath: Assets.imageUs,
-                  title: LocaleKeys.english_lang.tr(),
+                  title: LocaleKeys.dark_theme.tr(),
+                  iconData: Icons.dark_mode_outlined,
+                  themeMode: ThemeMode.dark,
                 ),
                 DialogListTile(
                   context: context,
-                  locale: Locales.de,
-                  svgPath: Assets.imageGermany,
-                  title: LocaleKeys.german_lang.tr(),
+                  title: LocaleKeys.light_theme.tr(),
+                  iconData: Icons.light_mode_outlined,
+                  themeMode: ThemeMode.light,
                 ),
                 DialogListTile(
                   context: context,
-                  locale: Locales.tr,
-                  svgPath: Assets.imageTurkey,
-                  title: LocaleKeys.turkish_lang.tr(),
+                  iconData: Icons.settings_system_daydream,
+                  title: LocaleKeys.system_theme.tr(),
+                  themeMode: ThemeMode.system,
                 ),
               ],
             ),

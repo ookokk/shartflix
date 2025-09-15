@@ -14,7 +14,7 @@ class AppNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.only(bottom: 24),
       child: _NavBarWidget(
         items: [
           NavBarModel(

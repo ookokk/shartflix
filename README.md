@@ -1,16 +1,53 @@
-# shartflix
+# Shartflix - Flutter Study Case (NodeLabs Software)
 
-A new Flutter project.
+Shartflix, Flutter ile geliştirilmiş bir film katalog uygulaması olarak tasarlanmış bir **study case** projesidir. 
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Özellikler
 
-A few resources to get you started if this is your first Flutter project:
+- **Riverpod ile State Yönetimi:** Global ve lokal state yönetimi, özellikle kullanıcı etkileşimleri.
+- **AutoRoute ile Navigation:** Sayfalar arası yönetimli ve tip güvenli navigasyon.
+- **Responsive UI:** `flutter_screenutil` kullanılarak ekran boyutlarına uygun tasarım.
+- **Localization:** `easy_localization` ile çoklu dil desteği.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Paketler
+
+- **State Management:** `flutter_riverpod`
+- **Navigation:** `auto_route` + `auto_route_generator`
+- **Networking:** `dio`, `connectivity_plus`
+- **UI:** `flutter_screenutil`, `flutter_svg`, `cached_network_image`, `lottie`, `dotted_border`
+- **Localization:** `easy_localization`
+- **Fonts & Styling:** `google_fonts`, `kartal`
+- **Secure Storage:** `flutter_secure_storage`
+- **Code Generation:** `freezed`, `json_serializable`, `build_runner`
+- **Dev Tools:** `flutter_lints`, `very_good_analysis`
+
+---
+
+## Folder Structure
+
+lib/
+├── app.dart
+├── bootstrap.dart
+├── main.dart
+├── core/
+│ ├── const
+│ ├── init
+│ ├── router
+│ ├── theme
+│ └── util
+├── feature/
+│ ├── auth
+│ ├── explore
+│ ├── photo_upload
+│ ├── profile
+│ └── settings
+├── product/
+│ ├── model
+│ ├── servic
+│ └── widget
+
+

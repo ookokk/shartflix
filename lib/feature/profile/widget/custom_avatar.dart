@@ -1,11 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:shartflix/core/const/extensions/context_extension.dart';
 
 class CustomAvatar extends StatelessWidget {
   const CustomAvatar({required this.imageUrl, this.onPressed, super.key});
   final VoidCallback? onPressed;
-  final String imageUrl;
+  final String? imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -13,23 +12,32 @@ class CustomAvatar extends StatelessWidget {
       onPressed: onPressed,
       padding: EdgeInsets.zero,
       icon: ClipOval(
-        child: CachedNetworkImage(
-          width: 64,
-          height: 64,
-          fit: BoxFit.cover,
-          imageUrl: imageUrl,
-          placeholder: (context, url) =>
-              const CircularProgressIndicator.adaptive(),
-          errorWidget: (context, url, error) {
-            return DecoratedBox(
-              decoration: BoxDecoration(
-                color: context.colorScheme.errorContainer,
+        child: (imageUrl == null || imageUrl!.isEmpty)
+            ? const _ErrorAvatar()
+            : CachedNetworkImage(
+                width: 64,
+                height: 64,
+                fit: BoxFit.cover,
+                imageUrl: imageUrl!,
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator.adaptive(),
+                errorWidget: (context, url, error) => const _ErrorAvatar(),
               ),
-              child: const Icon(Icons.person),
-            );
-          },
-        ),
       ),
+    );
+  }
+}
+
+class _ErrorAvatar extends StatelessWidget {
+  const _ErrorAvatar();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 64,
+      height: 64,
+      color: Colors.grey,
+      child: const Icon(Icons.person, color: Colors.white),
     );
   }
 }

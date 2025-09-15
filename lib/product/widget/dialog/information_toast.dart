@@ -41,38 +41,37 @@ class _NotificationWidgetState extends State<_NotificationWidget>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(milliseconds: 2500),
     );
+
     _offsetAnimation = TweenSequence<Offset>([
       TweenSequenceItem(
         tween: Tween<Offset>(
-          begin: const Offset(0, 1),
+          begin: const Offset(0, -1),
           end: Offset.zero,
-        ).chain(CurveTween(curve: Curves.fastLinearToSlowEaseIn)),
-        weight: 50,
+        ).chain(CurveTween(curve: Curves.easeOut)),
+        weight: 20,
+      ),
+      TweenSequenceItem(
+        tween: ConstantTween<Offset>(Offset.zero),
+        weight: 60,
       ),
       TweenSequenceItem(
         tween: Tween<Offset>(
           begin: Offset.zero,
-          end: const Offset(0, 2),
-        ).chain(CurveTween(curve: Curves.fastEaseInToSlowEaseOut)),
-        weight: 50,
+          end: const Offset(0, 15),
+        ).chain(CurveTween(curve: Curves.easeIn)),
+        weight: 20,
       ),
     ]).animate(_controller);
     _controller.forward();
-    Future.delayed(const Duration(milliseconds: 2500), widget.onRemove);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+    Future.delayed(const Duration(milliseconds: 3000), widget.onRemove);
   }
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 20,
+      top: 50,
       left: MediaQuery.of(context).size.width * 0.1,
       width: MediaQuery.of(context).size.width * 0.8,
       child: SlideTransition(
@@ -82,7 +81,7 @@ class _NotificationWidgetState extends State<_NotificationWidget>
           child: Container(
             padding: const EdgeInsets.symmetric(
               horizontal: 14,
-              vertical: 1,
+              vertical: 8,
             ),
             decoration: BoxDecoration(
               color: widget.bgColor,
@@ -106,5 +105,11 @@ class _NotificationWidgetState extends State<_NotificationWidget>
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }

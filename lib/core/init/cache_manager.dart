@@ -21,7 +21,7 @@ final class CacheManager {
     await _storage.delete(key: _tokenKey);
   }
 
-  Future<void> clearAll() async {
+  Future<void> clearCache() async {
     await _storage.deleteAll();
   }
 }

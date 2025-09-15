@@ -74,6 +74,7 @@ class PhotoUploadView extends ConsumerWidget {
                           ),
                   ),
                 ),
+                10.verticalSpace,
                 if (isNewRegistered)
                   PhotoUploadButton(
                     onTap: () => context.router.pushAndPopUntil(

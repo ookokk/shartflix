@@ -9,6 +9,7 @@
   "success": "Success",
   "settings_appbar": "Settings",
   "warning_question": "Warning",
+  "invalid_form": "Invalid form data",
   "signOut": "Sign out",
   "changeLanguage": "Change the language",
   "areYouSureSignOut": "Are you sure you want sign out?",

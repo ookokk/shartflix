@@ -26,7 +26,7 @@ class FavoriteMovies extends StatelessWidget {
                 child: Text(
                   LocaleKeys.there_is_no_film_yet.tr(),
                   style: context.textTheme.labelLarge?.copyWith(
-                    color: Colors.red,
+                    color: Colors.white,
                   ),
                 ),
               )

@@ -21,7 +21,7 @@ class ProfileCard extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          CustomAvatar(imageUrl: userModel.photoUrl!, onPressed: onTap),
+          CustomAvatar(imageUrl: userModel.photoUrl, onPressed: onTap),
           10.horizontalSpace,
           Expanded(
             child: Column(

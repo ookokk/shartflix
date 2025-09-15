@@ -19,12 +19,12 @@ class PhotoUploadCard extends ConsumerWidget {
         options: const RoundedRectDottedBorderOptions(
           dashPattern: [5, 5],
           radius: Radius.circular(24),
-          color: Colors.white70,
+          color: Colors.grey,
           padding: EdgeInsets.all(16),
         ),
         child: SizedBox(
-          width: context.media.size.width / 1.8,
-          height: context.media.size.width / 1.8,
+          width: context.media.size.width / 2.4,
+          height: context.media.size.width / 2.4,
           child: image != null
               ? Image.file(image!, fit: BoxFit.cover)
               : Center(child: Image.asset(Assets.imagePlusIcon)),

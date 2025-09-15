@@ -57,6 +57,7 @@ class Assets {
       'assets/image/profile_pic_container.svg';
   static const String imageRedHeart = 'assets/image/red_heart.png';
   static const String imageSee = 'assets/image/See.png';
+  static const String imageShartflix = 'assets/image/shartflix.png';
   static const String imageSocialApple = 'assets/image/social_apple.svg';
   static const String imageSocialFacebook =
       'assets/image/social_facebook.svg';

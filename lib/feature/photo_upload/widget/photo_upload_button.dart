@@ -20,6 +20,7 @@ class PhotoUploadButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
+        elevation: 0,
         minimumSize: const Size(double.infinity - 50, 60),
         maximumSize: const Size(double.infinity - 50, 60),
         backgroundColor: bgColor,

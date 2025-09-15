@@ -6,14 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shartflix/core/const/enums/alert_dialog_colors.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
-import 'package:shartflix/feature/auth/controller/auth_view_model.dart';
 import 'package:shartflix/feature/auth/view/login/widget/go_to_register_button.dart';
+import 'package:shartflix/feature/auth/view/login/widget/login_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/social_sign_in_button.dart';
-import 'package:shartflix/feature/auth/view/register/widget/register_button.dart';
 import 'package:shartflix/feature/auth/view/register/widget/register_form.dart';
 import 'package:shartflix/feature/auth/view/register/widget/register_title.dart';
 import 'package:shartflix/feature/auth/view/register/widget/term_of_privacy_button.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
+import 'package:shartflix/product/service/auth_service.dart';
 import 'package:shartflix/product/widget/dialog/warning_alert.dart';
 import 'package:shartflix/product/widget/responsive/circle_gradient_background.dart';
 
@@ -52,7 +52,10 @@ class _RegisterViewState extends ConsumerState<RegisterView>
                 5.verticalSpace,
                 const TermOfPrivacyButton(),
                 5.verticalSpace,
-                RegisterButton(onPressed: _register),
+                LoginRegisterButton(
+                  text: LocaleKeys.sign_register.tr(),
+                  onPressed: _register,
+                ),
                 5.verticalSpace,
                 const SocialSignInButton(),
                 5.verticalSpace,

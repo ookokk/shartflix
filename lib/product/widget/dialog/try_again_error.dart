@@ -15,7 +15,9 @@ class TryAgainError extends StatelessWidget {
         onPressed: onTap,
         child: Text(
           LocaleKeys.an_error_occurred.tr(),
-          style: context.textTheme.labelLarge,
+          style: context.textTheme.labelLarge?.copyWith(
+            color: Colors.grey,
+          ),
         ),
       ),
     );

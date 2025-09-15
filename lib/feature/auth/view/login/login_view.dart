@@ -7,15 +7,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shartflix/core/const/enums/alert_dialog_colors.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
-import 'package:shartflix/feature/auth/controller/auth_view_model.dart';
 import 'package:shartflix/feature/auth/view/login/widget/go_to_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_animation_movies.dart';
-import 'package:shartflix/feature/auth/view/login/widget/login_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_form.dart';
+import 'package:shartflix/feature/auth/view/login/widget/login_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_title.dart';
 import 'package:shartflix/feature/auth/view/login/widget/reset_password.dart';
 import 'package:shartflix/feature/auth/view/login/widget/social_sign_in_button.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
+import 'package:shartflix/product/service/auth_service.dart';
 import 'package:shartflix/product/widget/dialog/warning_alert.dart';
 import 'package:shartflix/product/widget/responsive/circle_gradient_background.dart';
 
@@ -53,7 +53,10 @@ class LoginViewState extends ConsumerState<LoginView>
                     passwordController: _passwordController,
                   ),
                   ResetPassword(onPressed: () {}),
-                  LoginButton(onPressed: _login),
+                  LoginRegisterButton(
+                    onPressed: _login,
+                    text: LocaleKeys.sign_login.tr(),
+                  ),
                   20.verticalSpace,
                   const SocialSignInButton(),
                   10.verticalSpace,

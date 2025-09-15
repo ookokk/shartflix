@@ -39,6 +39,7 @@ class NetworkManager {
         queryParameters: queryParameters,
         options: Options(method: method.value, headers: headers),
       );
+      debugPrint(response.toString());
       return response.data;
     } on DioException catch (e) {
       debugPrint('Dio error: ${e.message}');

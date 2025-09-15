@@ -1,7 +1,6 @@
 part of 'login_view.dart';
 
 mixin _LoginViewMixin on ConsumerState<LoginView> {
-  late final AuthViewModel _viewModel;
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
   late final GlobalKey<FormState> _formKey;
@@ -12,7 +11,7 @@ mixin _LoginViewMixin on ConsumerState<LoginView> {
 
   Future<void> _login() async {
     if (_formKey.currentState!.validate()) {
-      final res = await _viewModel.login(
+      final res = await AuthService.instance.login(
         email: _emailController.text,
         password: _passwordController.text,
       );
@@ -42,7 +41,6 @@ mixin _LoginViewMixin on ConsumerState<LoginView> {
 
   @override
   void initState() {
-    _viewModel = AuthViewModel();
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
     _formKey = GlobalKey<FormState>();

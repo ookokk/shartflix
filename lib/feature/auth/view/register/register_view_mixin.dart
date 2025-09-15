@@ -1,7 +1,6 @@
 part of 'register_view.dart';
 
 mixin _RegisterViewMixin on ConsumerState<RegisterView> {
-  late final AuthViewModel _viewModel;
   late final TextEditingController _nameController;
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
@@ -14,12 +13,13 @@ mixin _RegisterViewMixin on ConsumerState<RegisterView> {
   Future<void> _register() async {
     if (_formKey.currentState!.validate() &&
         ref.watch(isTermApprovedProvider)) {
-      final res = await _viewModel.register(
+      final res = await AuthService.instance.register(
         name: _nameController.text,
         email: _emailController.text,
         password: _passwordController.text,
       );
-      if (res != null && res.response?.code == 201) {
+      if (res != null &&
+          (res.response?.code == 201 || res.response?.code == 200)) {
         await context.router.pushAndPopUntil(
           PhotoUploadRoute(isNewRegistered: true),
           predicate: (_) => false,
@@ -46,7 +46,6 @@ mixin _RegisterViewMixin on ConsumerState<RegisterView> {
 
   @override
   void initState() {
-    _viewModel = AuthViewModel();
     _nameController = TextEditingController();
     _emailController = TextEditingController();
     _passwordController = TextEditingController();

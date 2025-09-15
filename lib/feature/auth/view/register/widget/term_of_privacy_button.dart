@@ -38,6 +38,7 @@ class TermOfPrivacyButton extends ConsumerWidget {
             text: TextSpan(
               style: context.textTheme.labelLarge?.copyWith(
                 color: Colors.white,
+                fontWeight: FontWeight.w100,
               ),
               text: LocaleKeys.sign_agreement_message.tr(),
               children: [
@@ -54,6 +55,7 @@ class TermOfPrivacyButton extends ConsumerWidget {
                   text: ' ${LocaleKeys.sign_agreement_message_three.tr()}',
                   style: context.textTheme.labelLarge?.copyWith(
                     color: Colors.white,
+                    fontWeight: FontWeight.w100,
                   ),
                 ),
               ],

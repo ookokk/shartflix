@@ -8,7 +8,7 @@ import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
 import 'package:shartflix/feature/auth/view/login/widget/go_to_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_register_button.dart';
-import 'package:shartflix/feature/auth/view/login/widget/social_sign_in_button.dart';
+import 'package:shartflix/feature/auth/view/login/widget/social_sign_buttons.dart';
 import 'package:shartflix/feature/auth/view/register/widget/register_form.dart';
 import 'package:shartflix/feature/auth/view/register/widget/register_title.dart';
 import 'package:shartflix/feature/auth/view/register/widget/term_of_privacy_button.dart';
@@ -57,7 +57,7 @@ class _RegisterViewState extends ConsumerState<RegisterView>
                   onPressed: _register,
                 ),
                 5.verticalSpace,
-                const SocialSignInButton(),
+                const SocialSignButtons(),
                 5.verticalSpace,
                 GoToRegisterButton(
                   text1: ' ${LocaleKeys.sign_no_account.tr()}',

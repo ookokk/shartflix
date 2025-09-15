@@ -16,7 +16,7 @@ class RegisterTitle extends StatelessWidget {
         20.verticalSpace,
         SvgPicture.asset(
           Assets.imageAppIcon,
-          height: context.media.size.height * 0.14,
+          height: context.media.size.height * 0.12,
         ),
         Text(
           LocaleKeys.sign_register.tr(),

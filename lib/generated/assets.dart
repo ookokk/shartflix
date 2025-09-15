@@ -4,15 +4,10 @@ class Assets {
 
   static const String imageAppIcon = 'assets/image/app_icon.svg';
   static const String imageArrow = 'assets/image/Arrow.png';
-  static const String imageBonus1 = 'assets/image/bonus1.svg';
-  static const String imageBonus1jpg = 'assets/image/bonus1jpg.jpg';
-  static const String imageBonus2 = 'assets/image/bonus2.svg';
-  static const String imageBonus2jpg = 'assets/image/bonus2jpg.jpg';
-  static const String imageBonus3 = 'assets/image/bonus3.svg';
-  static const String imageBonus3jpg = 'assets/image/bonus3jpg.jpg';
-  static const String imageBonus4 = 'assets/image/bonus4.svg';
-  static const String imageBonus4jpg = 'assets/image/bonus4jpg.jpg';
-  static const String imageBonusFour = 'assets/image/bonus_four.svg';
+  static const String imageBonus1 = 'assets/image/bonus_1.png';
+  static const String imageBonus2 = 'assets/image/bonus2.png';
+  static const String imageBonus3 = 'assets/image/bonus3.png';
+  static const String imageBonus4 = 'assets/image/bonus4.png';
   static const String imageCoin1 = 'assets/image/coin1.svg';
   static const String imageCoin2 = 'assets/image/coin2.svg';
   static const String imageCoin3 = 'assets/image/coin3.svg';
@@ -35,8 +30,6 @@ class Assets {
   static const String imageLogin4 = 'assets/image/login4.svg';
   static const String imageLogin4png = 'assets/image/login4png.jpeg';
   static const String imageMail = 'assets/image/Mail.png';
-  static const String imageOfferCancelButton =
-      'assets/image/offer_cancel_button.jpg';
   static const String imageOfferCancelSvg =
       'assets/image/offer_cancel_svg.svg';
   static const String imageOfferIconGem =
@@ -47,6 +40,7 @@ class Assets {
       'assets/image/offer_icon_hearts.png';
   static const String imageOfferIconUpArrow =
       'assets/image/offer_icon_up_arrow.png';
+  static const String imageOfferXIcon = 'assets/image/offer_x_icon.svg';
   static const String imagePlus = 'assets/image/Plus.png';
   static const String imagePlusIcon = 'assets/image/plus_icon.png';
   static const String imagePoland = 'assets/image/poland.svg';

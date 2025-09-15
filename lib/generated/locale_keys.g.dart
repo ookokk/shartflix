@@ -12,6 +12,7 @@ abstract class  LocaleKeys {
   static const cancel = 'cancel';
   static const warning_question = 'warning_question';
   static const settings_appbar = 'settings_appbar';
+  static const invalid_form = 'invalid_form';
   static const success = 'success';
   static const signOut = 'signOut';
   static const changeLanguage = 'changeLanguage';

@@ -14,13 +14,18 @@ class BonusItem extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(iconPath, height: 80, fit: BoxFit.contain),
+          Image.asset(iconPath, fit: BoxFit.cover, height: 70),
           5.verticalSpace,
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            style: context.textTheme.labelLarge?.copyWith(
-              color: Colors.white,
+          SizedBox(
+            width: 100.w,
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: context.textTheme.labelLarge?.copyWith(
+                color: Colors.white,
+              ),
             ),
           ),
         ],

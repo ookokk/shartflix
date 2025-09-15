@@ -11,49 +11,68 @@ class LoginAnimationMovies extends StatefulWidget {
 }
 
 class _LoginAnimationMoviesState extends State<LoginAnimationMovies>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _rotation;
+    with TickerProviderStateMixin {
+  late final List<AnimationController> _controllers;
+  late final List<Animation<double>> _rotations;
+
+  final List<String> _images = [
+    Assets.imageLogin1png,
+    Assets.imageLogin2png,
+    Assets.imageLogin3png,
+    Assets.imageLogin4png,
+  ];
+  final List<int> _durations = [4, 5, 6, 7];
 
   @override
   void initState() {
     super.initState();
 
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 10),
-    )..repeat(reverse: true);
+    _controllers = _durations.map((duration) {
+      return AnimationController(
+        vsync: this,
+        duration: Duration(seconds: duration),
+      )..repeat(reverse: true);
+    }).toList();
 
-    _rotation = Tween<double>(begin: -0.25, end: 0.25).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _rotations = _controllers.map((controller) {
+      return Tween<double>(begin: -0.1, end: 0.15).animate(
+        CurvedAnimation(parent: controller, curve: Curves.easeInOut),
+      );
+    }).toList();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    for (final controller in _controllers) {
+      controller.dispose();
+    }
     super.dispose();
   }
 
-  Widget _buildHangingImage(String asset) {
-    return Column(
-      children: [
-        Container(width: 2, height: 70, color: Colors.white),
-        AnimatedBuilder(
-          animation: _rotation,
-          builder: (context, child) {
-            return Transform.rotate(
-              angle: _rotation.value,
-              alignment: Alignment.topCenter,
-              child: child,
-            );
-          },
-          child: Image.asset(
-            asset,
-            width: context.media.size.width * 0.16,
-          ),
+  Widget _buildHangingImage(int index) {
+    return RepaintBoundary(
+      child: AnimatedBuilder(
+        animation: _rotations[index],
+        builder: (context, child) {
+          return Transform.rotate(
+            angle: _rotations[index].value,
+            alignment: Alignment.topCenter,
+            child: child,
+          );
+        },
+        child: Column(
+          children: [
+            Container(width: 1, height: 70, color: Colors.white), // ip
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                _images[index],
+                width: context.media.size.width * 0.2,
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 
@@ -61,12 +80,7 @@ class _LoginAnimationMoviesState extends State<LoginAnimationMovies>
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        _buildHangingImage(Assets.imageLogin1png),
-        _buildHangingImage(Assets.imageLogin2png),
-        _buildHangingImage(Assets.imageLogin3png),
-        _buildHangingImage(Assets.imageLogin4png),
-      ],
+      children: List.generate(_images.length, _buildHangingImage),
     );
   }
 }

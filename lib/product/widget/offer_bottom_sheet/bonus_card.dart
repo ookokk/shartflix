@@ -16,7 +16,7 @@ class BonusCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(CustomAppSizes.medium),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey),
+          border: Border.all(color: Colors.grey, width: 0.6),
           borderRadius: BorderRadius.circular(CustomAppSizes.medium),
         ),
         child: Column(
@@ -34,19 +34,19 @@ class BonusCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 BonusItem(
-                  iconPath: Assets.imageOfferIconGem,
+                  iconPath: Assets.imageBonus1,
                   text: LocaleKeys.bottom_sheet_bonus_gem.tr(),
                 ),
                 BonusItem(
-                  iconPath: Assets.imageOfferIconHearts,
+                  iconPath: Assets.imageBonus2,
                   text: LocaleKeys.bottom_sheet_bonus_hearts.tr(),
                 ),
                 BonusItem(
-                  iconPath: Assets.imageOfferIconUpArrow,
+                  iconPath: Assets.imageBonus3,
                   text: LocaleKeys.bottom_sheet_bonus_up_arrow.tr(),
                 ),
                 BonusItem(
-                  iconPath: Assets.imageOfferIconHeart,
+                  iconPath: Assets.imageBonus4,
                   text: LocaleKeys.bottom_sheet_bonus_heart.tr(),
                 ),
               ],

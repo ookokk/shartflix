@@ -13,7 +13,7 @@ import 'package:shartflix/feature/auth/view/login/widget/login_form.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_title.dart';
 import 'package:shartflix/feature/auth/view/login/widget/reset_password.dart';
-import 'package:shartflix/feature/auth/view/login/widget/social_sign_in_button.dart';
+import 'package:shartflix/feature/auth/view/login/widget/social_sign_buttons.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
 import 'package:shartflix/product/service/auth_service.dart';
 import 'package:shartflix/product/widget/dialog/warning_alert.dart';
@@ -46,19 +46,19 @@ class LoginViewState extends ConsumerState<LoginView>
                   const LoginAnimationMovies(),
                   10.verticalSpace,
                   const LoginTitle(),
-                  10.verticalSpace,
+                  30.verticalSpace,
                   LoginForm(
                     formKey: _formKey,
                     emailController: _emailController,
                     passwordController: _passwordController,
                   ),
-                  ResetPassword(onPressed: () {}),
+                  const ResetPassword(),
                   LoginRegisterButton(
                     onPressed: _login,
                     text: LocaleKeys.sign_login.tr(),
                   ),
                   20.verticalSpace,
-                  const SocialSignInButton(),
+                  const SocialSignButtons(),
                   10.verticalSpace,
                   GoToRegisterButton(
                     text1: ' ${LocaleKeys.sign_exist_account.tr()}  ',

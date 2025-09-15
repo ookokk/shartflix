@@ -66,15 +66,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
           fontWeight: FontWeight.w500,
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-        fillColor: const Color(0x33FFFFFF),
+        fillColor: const Color(0xff1A0202),
         prefixIcon: widget.prefixIcon,
-        prefixIconColor: Colors.white,
         suffixIcon: _suffixIcon(widget.isObscure),
         hintText: widget.hint,
         hintStyle: context.textTheme.labelLarge?.copyWith(
           color: Colors.grey,
         ),
-
         border: const OutlineInputBorder(borderRadius: AppRadius.medium),
         filled: true,
       ),
@@ -86,8 +84,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ? IconButton(
             onPressed: _isPassword,
             icon: this.isVisibleObscure
-                ? const Icon(Icons.visibility_off, color: Colors.white)
-                : const Icon(Icons.visibility, color: Colors.white),
+                ? const Icon(Icons.visibility_off, color: Colors.grey)
+                : const Icon(Icons.visibility, color: Colors.grey),
           )
         : null;
   }

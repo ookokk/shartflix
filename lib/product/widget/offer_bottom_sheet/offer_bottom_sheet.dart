@@ -3,8 +3,8 @@ import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/product/widget/offer_bottom_sheet/all_jeton_button.dart';
 import 'package:shartflix/product/widget/offer_bottom_sheet/bonus_card.dart';
 import 'package:shartflix/product/widget/offer_bottom_sheet/coins_card.dart';
+import 'package:shartflix/product/widget/offer_bottom_sheet/offer_gradient_background.dart';
 import 'package:shartflix/product/widget/offer_bottom_sheet/offer_title.dart';
-import 'package:shartflix/product/widget/responsive/circle_gradient_background.dart';
 
 class OfferBottomSheet {
   static Future<void> show(BuildContext context) async {
@@ -24,7 +24,7 @@ class OfferBottomSheet {
           ),
           child: FractionallySizedBox(
             heightFactor: 0.8,
-            child: CircleGradientBackground(
+            child: OfferGradientBackground(
               child: Padding(
                 padding: const EdgeInsets.all(CustomAppSizes.medium),
                 child: ListView.separated(

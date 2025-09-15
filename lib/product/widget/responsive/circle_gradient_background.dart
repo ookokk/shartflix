@@ -13,7 +13,7 @@ class CircleGradientBackground extends StatelessWidget {
         gradient: RadialGradient(
           center: Alignment.topCenter,
           radius: 0.6,
-          colors: [Color(0xFFA20202), Color(0xFF590606), Colors.black],
+          colors: [Color(0xFFEC0909), Color(0xFF590606), Colors.black],
           stops: [0.0, 0.3, 1.0],
         ),
       ),

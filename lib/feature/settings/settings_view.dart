@@ -11,7 +11,6 @@ import 'package:shartflix/feature/settings/widget/change_language_dialog.dart';
 import 'package:shartflix/feature/settings/widget/settings_divider.dart';
 import 'package:shartflix/feature/settings/widget/settings_list_tile.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
-import 'package:shartflix/product/widget/dialog/information_toast.dart';
 import 'package:shartflix/product/widget/dialog/question_alert.dart';
 import 'package:shartflix/product/widget/responsive/red_black_gradient_background.dart';
 
@@ -31,16 +30,6 @@ class SettingsView extends ConsumerWidget {
             child: Column(
               children: [
                 100.verticalSpace,
-                TextButton(
-                  onPressed: () {
-                    InformationToast().show(
-                      context,
-                      'test',
-                      AlertDialogColors.info,
-                    );
-                  },
-                  child: Text('asdasdasd'),
-                ),
                 SettingsListTile(
                   iconData: Icons.language,
                   text: LocaleKeys.changeLanguage.tr(),

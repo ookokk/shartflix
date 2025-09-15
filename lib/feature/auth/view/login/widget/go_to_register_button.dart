@@ -25,7 +25,7 @@ class GoToRegisterButton extends StatelessWidget {
           ),
           children: [
             TextSpan(
-              text: text2,
+              text: '  $text2',
               style: context.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: Colors.white,

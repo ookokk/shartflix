@@ -14,6 +14,4 @@ class MockUser {
     ),
   );
   final mockMovieId = '67bc8502e03a0ef366d5c66c';
-  final safaToken =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjOGQ1OGQ5ZWM0ZDQwMDQwYjgxYjYiLCJpZCI6IjY3YmM4ZDU4ZDllYzRkNDAwNDBiODFiNiIsIm5hbWUiOiJzYWZhIiwiaWF0IjoxNzU4MDQ4OTg2LCJleHAiOjQ4Njg0NDg5ODZ9.bgPjfvHRq8oMr35R8wqB4Ifkzaa1OZB7QV-oc417U5';
 }

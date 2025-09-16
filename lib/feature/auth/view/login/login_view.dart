@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shartflix/core/const/enums/alert_dialog_colors.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
+import 'package:shartflix/feature/auth/controller/auth_view_model.dart';
 import 'package:shartflix/feature/auth/view/login/widget/go_to_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_form.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_movies_lottie.dart';
@@ -15,24 +15,17 @@ import 'package:shartflix/feature/auth/view/login/widget/login_title.dart';
 import 'package:shartflix/feature/auth/view/login/widget/reset_password.dart';
 import 'package:shartflix/feature/auth/view/login/widget/social_sign_buttons.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
-import 'package:shartflix/product/service/auth_service.dart';
-import 'package:shartflix/product/widget/dialog/warning_alert.dart';
 import 'package:shartflix/product/widget/responsive/circle_gradient_background.dart';
 
-part 'login_view_mixin.dart';
-
 @RoutePage()
-class LoginView extends ConsumerStatefulWidget {
+class LoginView extends ConsumerWidget {
   const LoginView({super.key});
 
   @override
-  ConsumerState<LoginView> createState() => LoginViewState();
-}
-
-class LoginViewState extends ConsumerState<LoginView>
-    with _LoginViewMixin {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final formKey = GlobalKey<FormState>();
+    final emailCnt = TextEditingController();
+    final passwordCnt = TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: CircleGradientBackground(
@@ -47,13 +40,19 @@ class LoginViewState extends ConsumerState<LoginView>
                   const LoginTitle(),
                   30.verticalSpace,
                   LoginForm(
-                    formKey: _formKey,
-                    emailController: _emailController,
-                    passwordController: _passwordController,
+                    formKey: formKey,
+                    emailController: emailCnt,
+                    passwordController: passwordCnt,
                   ),
                   const ResetPassword(),
                   LoginRegisterButton(
-                    onPressed: _login,
+                    onPressed: () => AuthViewModel().login(
+                      context,
+                      ref,
+                      formKey,
+                      emailCnt.text,
+                      passwordCnt.text,
+                    ),
                     text: LocaleKeys.sign_login.tr(),
                   ),
                   20.verticalSpace,
@@ -62,7 +61,8 @@ class LoginViewState extends ConsumerState<LoginView>
                   GoToRegisterButton(
                     text1: ' ${LocaleKeys.sign_exist_account.tr()}  ',
                     text2: LocaleKeys.sign_login_message.tr(),
-                    onPressed: _goRegister,
+                    onPressed: () =>
+                        context.router.push(const RegisterRoute()),
                   ),
                 ],
               ),

@@ -3,9 +3,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shartflix/core/const/enums/alert_dialog_colors.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
+import 'package:shartflix/feature/auth/controller/auth_view_model.dart';
 import 'package:shartflix/feature/auth/view/login/widget/go_to_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/social_sign_buttons.dart';
@@ -13,24 +13,19 @@ import 'package:shartflix/feature/auth/view/register/widget/register_form.dart';
 import 'package:shartflix/feature/auth/view/register/widget/register_title.dart';
 import 'package:shartflix/feature/auth/view/register/widget/term_of_privacy_button.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
-import 'package:shartflix/product/service/auth_service.dart';
-import 'package:shartflix/product/widget/dialog/warning_alert.dart';
 import 'package:shartflix/product/widget/responsive/circle_gradient_background.dart';
 
-part 'register_view_mixin.dart';
-
 @RoutePage()
-class RegisterView extends ConsumerStatefulWidget {
+class RegisterView extends ConsumerWidget {
   const RegisterView({super.key});
 
   @override
-  ConsumerState<RegisterView> createState() => _RegisterViewState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final formKey = GlobalKey<FormState>();
+    final emailCnt = TextEditingController();
+    final nameCnt = TextEditingController();
+    final passwordCnt = TextEditingController();
 
-class _RegisterViewState extends ConsumerState<RegisterView>
-    with _RegisterViewMixin {
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: CircleGradientBackground(
@@ -44,17 +39,24 @@ class _RegisterViewState extends ConsumerState<RegisterView>
                 10.verticalSpace,
                 const RegisterTitle(),
                 RegisterForm(
-                  formKey: _formKey,
-                  nameController: _nameController,
-                  emailController: _emailController,
-                  passwordController: _passwordController,
+                  formKey: formKey,
+                  nameController: nameCnt,
+                  emailController: emailCnt,
+                  passwordController: passwordCnt,
                 ),
                 5.verticalSpace,
                 const TermOfPrivacyButton(),
                 5.verticalSpace,
                 LoginRegisterButton(
                   text: LocaleKeys.sign_register.tr(),
-                  onPressed: _register,
+                  onPressed: () => AuthViewModel().register(
+                    context,
+                    ref,
+                    formKey,
+                    emailCnt.text,
+                    passwordCnt.text,
+                    nameCnt.text,
+                  ),
                 ),
                 5.verticalSpace,
                 const SocialSignButtons(),
@@ -62,7 +64,7 @@ class _RegisterViewState extends ConsumerState<RegisterView>
                 GoToRegisterButton(
                   text1: ' ${LocaleKeys.sign_no_account.tr()}',
                   text2: LocaleKeys.sign_login.tr(),
-                  onPressed: _goLogin,
+                  onPressed: () => context.router.push(const LoginRoute()),
                 ),
               ],
             ),

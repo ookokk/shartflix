@@ -6,7 +6,6 @@ import '../mock/mock_user.dart';
 void main() {
   final mockUser = MockUser().mockUser1;
   final authService = AuthService.instance;
-
   group('AuthService Tests', () {
     test('Login should return AuthResponseModel with token', () async {
       final result = await authService.login(

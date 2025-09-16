@@ -40,7 +40,6 @@ class LoginForm extends StatelessWidget {
           ),
           CustomTextField(
             validator: SignValidator().passwordValidator,
-
             controller: passwordController,
             hint: LocaleKeys.sign_password.tr(),
             prefixIcon: Padding(

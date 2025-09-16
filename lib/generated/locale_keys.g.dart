@@ -12,6 +12,7 @@ abstract class  LocaleKeys {
   static const cancel = 'cancel';
   static const system_theme = 'system_theme';
   static const theme_settings = 'theme_settings';
+  static const please_privacy = 'please_privacy';
   static const dark_theme = 'dark_theme';
   static const light_theme = 'light_theme';
   static const warning_question = 'warning_question';

@@ -16,7 +16,10 @@ class BonusCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(CustomAppSizes.medium),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey, width: 0.6),
+          border: Border.all(
+            color: context.colorScheme.shadow,
+            width: 0.6,
+          ),
           borderRadius: BorderRadius.circular(CustomAppSizes.medium),
         ),
         child: Column(
@@ -26,7 +29,7 @@ class BonusCard extends StatelessWidget {
               LocaleKeys.bottom_sheet_bonus_title.tr(),
               style: context.textTheme.headlineMedium?.copyWith(
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: context.colorScheme.errorContainer,
               ),
             ),
             const SizedBox(height: CustomAppSizes.large),

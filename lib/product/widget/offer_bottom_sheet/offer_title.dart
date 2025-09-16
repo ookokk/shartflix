@@ -28,14 +28,14 @@ class OfferTitle extends StatelessWidget {
           LocaleKeys.bottom_sheet_offer_title.tr(),
           style: context.textTheme.displayMedium?.copyWith(
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: context.colorScheme.errorContainer,
           ),
         ),
-        10.verticalSpace,
+        1.verticalSpace,
         Text(
           LocaleKeys.bottom_sheet_offer_message.tr(),
           style: context.textTheme.headlineSmall?.copyWith(
-            color: Colors.white,
+            color: context.colorScheme.errorContainer,
           ),
           textAlign: TextAlign.center,
         ),

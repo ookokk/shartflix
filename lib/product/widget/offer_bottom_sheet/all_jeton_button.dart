@@ -17,6 +17,7 @@ class AllJetonButton extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: CustomButton(
+          bgColor: const Color(0XFFE50914),
           onPressed: onPressed,
           text: Text(
             LocaleKeys.bottom_sheet_button.tr(),

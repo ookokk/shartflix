@@ -12,7 +12,7 @@ class PhotoUploadTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: context.media.size.width / 2.5,
+      width: context.media.size.width / 2,
       child: Column(
         children: [
           20.verticalSpace,
@@ -22,14 +22,14 @@ class PhotoUploadTitle extends StatelessWidget {
             LocaleKeys.sign_upload_image_title.tr(),
             style: context.textTheme.displayMedium?.copyWith(
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: context.colorScheme.errorContainer,
             ),
           ),
           10.verticalSpace,
           Text(
             LocaleKeys.profile_photo_image_add.tr(),
             style: context.textTheme.headlineSmall?.copyWith(
-              color: Colors.white,
+              color: context.colorScheme.errorContainer,
             ),
             textAlign: TextAlign.center,
           ),

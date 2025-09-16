@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shartflix/core/const/extensions/context_extension.dart';
 
 class OfferGradientBackground extends StatelessWidget {
   const OfferGradientBackground({required this.child, super.key});
@@ -9,40 +10,43 @@ class OfferGradientBackground extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Color(0xFF2F0505), Color(0xFF2F0505)],
+          colors: [
+            context.colorScheme.surfaceBright,
+            context.colorScheme.surfaceBright,
+          ],
         ),
       ),
       child: Stack(
         children: [
           Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: RadialGradient(
                 center: Alignment.topCenter,
                 radius: 0.6,
                 colors: [
-                  Color(0xFFEC0909),
-                  Color(0xFF590606),
-                  Colors.transparent,
+                  context.colorScheme.surfaceContainer,
+                  context.colorScheme.surfaceContainerHigh,
+                  context.colorScheme.surfaceContainerHighest,
                 ],
-                stops: [0.0, 0.3, 1.0],
+                stops: const [0.0, 0.3, 1.0],
               ),
             ),
           ),
           Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: RadialGradient(
                 center: Alignment.bottomCenter,
                 radius: 0.6,
                 colors: [
-                  Color(0xFFEC0909),
-                  Color(0xFF590606),
-                  Colors.transparent,
+                  context.colorScheme.surfaceContainer,
+                  context.colorScheme.surfaceContainerHigh,
+                  context.colorScheme.surfaceContainerHighest,
                 ],
-                stops: [0.0, 0.3, 1.0],
+                stops: const [0.0, 0.3, 1.0],
               ),
             ),
           ),

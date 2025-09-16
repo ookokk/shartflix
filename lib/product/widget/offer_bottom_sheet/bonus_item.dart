@@ -24,7 +24,7 @@ class BonusItem extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: context.textTheme.labelLarge?.copyWith(
-                color: Colors.white,
+                color: context.colorScheme.errorContainer,
               ),
             ),
           ),

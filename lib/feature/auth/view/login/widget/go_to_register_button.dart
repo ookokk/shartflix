@@ -14,13 +14,14 @@ class GoToRegisterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.colorScheme;
     return TextButton(
       onPressed: onPressed,
       child: RichText(
         text: TextSpan(
           text: text1,
           style: context.textTheme.headlineSmall?.copyWith(
-            color: Colors.white,
+            color: theme.errorContainer,
             fontWeight: FontWeight.normal,
           ),
           children: [
@@ -28,7 +29,7 @@ class GoToRegisterButton extends StatelessWidget {
               text: '  $text2',
               style: context.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: theme.errorContainer,
               ),
             ),
           ],

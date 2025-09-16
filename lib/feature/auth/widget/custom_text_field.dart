@@ -49,6 +49,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.colorScheme;
     return TextFormField(
       controller: widget.controller,
       keyboardType: widget.keyboardType,
@@ -57,35 +58,48 @@ class _CustomTextFieldState extends State<CustomTextField> {
       onFieldSubmitted: widget.onFieldSubmitted,
       obscureText: isVisibleObscure,
       enabled: widget.enabled,
-      style: context.textTheme.labelLarge?.copyWith(color: Colors.white),
+      style: context.textTheme.labelLarge?.copyWith(
+        color: theme.errorContainer,
+      ),
       onChanged: widget.onChanged,
-
       decoration: InputDecoration(
         errorStyle: context.textTheme.labelLarge?.copyWith(
           color: Colors.redAccent,
           fontWeight: FontWeight.w500,
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-        fillColor: const Color(0xff1A0202),
+        fillColor: theme.onSecondary,
         prefixIcon: widget.prefixIcon,
         suffixIcon: _suffixIcon(widget.isObscure),
         hintText: widget.hint,
         hintStyle: context.textTheme.labelLarge?.copyWith(
-          color: Colors.grey,
+          color: theme.onInverseSurface,
         ),
-        border: const OutlineInputBorder(borderRadius: AppRadius.medium),
+        border: OutlineInputBorder(
+          borderRadius: AppRadius.medium,
+          borderSide: BorderSide(color: theme.onInverseSurface),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: AppRadius.medium,
+          borderSide: BorderSide(color: theme.onInverseSurface),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderRadius: AppRadius.medium,
+          borderSide: BorderSide(color: Colors.white),
+        ),
         filled: true,
       ),
     );
   }
 
   Widget? _suffixIcon(bool isVisibleObscure) {
+    final theme = context.colorScheme;
     return isVisibleObscure
         ? IconButton(
             onPressed: _isPassword,
             icon: this.isVisibleObscure
-                ? const Icon(Icons.visibility_off, color: Colors.grey)
-                : const Icon(Icons.visibility, color: Colors.grey),
+                ? Icon(Icons.visibility_off, color: theme.errorContainer)
+                : Icon(Icons.visibility, color: theme.errorContainer),
           )
         : null;
   }

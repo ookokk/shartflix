@@ -14,10 +14,11 @@ class ProfileAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.transparent,
       title: Text(
         LocaleKeys.nav_bar_profile.tr(),
         style: context.textTheme.displaySmall?.copyWith(
-          color: Colors.white,
+          color: context.colorScheme.errorContainer,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -25,6 +26,7 @@ class ProfileAppBar extends StatelessWidget
         Padding(
           padding: AppPaddings.smallHorizontal,
           child: CustomButton(
+            bgColor: const Color(0xFFEC0909),
             text: Text(
               LocaleKeys.bottom_sheet_offer_title.tr(),
               style: context.textTheme.labelLarge?.copyWith(
@@ -39,15 +41,6 @@ class ProfileAppBar extends StatelessWidget
           ),
         ),
       ],
-      flexibleSpace: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFF3F0306), Color(0xFF3F0306)],
-          ),
-        ),
-      ),
     );
   }
 

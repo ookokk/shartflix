@@ -1,58 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shartflix/core/const/env/app_env.dart';
 import 'package:shartflix/core/init/cache_manager.dart';
-import 'package:shartflix/core/theme/dark_theme_manager.dart';
-import 'package:shartflix/core/theme/light_theme_manager.dart';
+import 'package:shartflix/core/theme/app_themes.dart';
 
-final themeProvider = ChangeNotifierProvider<ThemeController>((ref) {
-  final controller = ThemeController()..loadTheme();
-  return controller;
-});
-
-class ThemeController extends ChangeNotifier {
-  ThemeController() {
-    _updateCurrentTheme();
+class ThemeController extends StateNotifier<ThemeData> {
+  ThemeController() : super(AppThemes().darkTheme) {
+    loadTheme();
   }
 
-  ThemeMode _themeMode = ThemeMode.system;
-  final _lightTheme = LightThemeManager().themeData;
-  final _darkTheme = DarkThemeManager().themeData;
+  final _currentTheme = AppThemes().darkTheme;
+  ThemeData get currentTheme => _currentTheme;
 
-  late ThemeData currentTheme;
+  void toggleTheme(String theme) {
+    _updateCurrentTheme(theme);
+    CacheManager.instance.setThemeMode(theme);
+  }
 
-  ThemeMode get themeMode => _themeMode;
-
-  ThemeData get lightTheme => _lightTheme;
-
-  ThemeData get darkTheme => _darkTheme;
-
-  void _updateCurrentTheme() {
-    switch (_themeMode) {
-      case ThemeMode.light:
-        currentTheme = _lightTheme;
-      case ThemeMode.dark:
-        currentTheme = _darkTheme;
-      case ThemeMode.system:
-        final brightness = WidgetsBinding.instance.window.platformBrightness;
-        currentTheme = brightness == Brightness.dark ? _darkTheme : _lightTheme;
+  void _updateCurrentTheme(String theme) {
+    switch (theme) {
+      case AppEnv.lightTheme:
+        state = AppThemes().lightTheme;
+      case AppEnv.darkTheme:
+        state = AppThemes().darkTheme;
+      default:
+        state = AppThemes().darkTheme;
     }
   }
 
   Future<void> loadTheme() async {
-    final savedTheme = await CacheManager.instance.getThemeMode();
-    if (savedTheme != null) {
-      _themeMode = savedTheme;
-      _updateCurrentTheme();
-      notifyListeners();
-    }
-  }
+    final savedTheme =
+        await CacheManager.instance.getTheme() ?? AppEnv.darkTheme;
 
-  Future<void> setTheme(ThemeMode mode) async {
-    _themeMode = mode;
-    _updateCurrentTheme();
-    await CacheManager.instance.setThemeMode(mode);
-    notifyListeners();
+    _updateCurrentTheme(savedTheme);
   }
-
-  Future<void> useSystemTheme() async => setTheme(ThemeMode.system);
 }
+
+final themeProvider =
+    StateNotifierProvider.autoDispose<ThemeController, ThemeData>((ref) {
+      return ThemeController();
+    });

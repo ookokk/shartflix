@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-final class CacheManager {
+class CacheManager {
   CacheManager._init();
   static final CacheManager _instance = CacheManager._init();
   static CacheManager get instance => _instance;
@@ -22,19 +21,12 @@ final class CacheManager {
     await _storage.delete(key: tokenKey);
   }
 
-  Future<void> setThemeMode(ThemeMode mode) async {
-    await _storage.write(key: themeKey, value: mode.index.toString());
+  Future<void> setThemeMode(String theme) async {
+    await _storage.write(key: themeKey, value: theme);
   }
 
-  Future<ThemeMode?> getThemeMode() async {
-    final value = await _storage.read(key: themeKey);
-    if (value == null) return null;
-
-    final index = int.tryParse(value);
-    if (index == null || index < 0 || index >= ThemeMode.values.length) {
-      return null;
-    }
-    return ThemeMode.values[index];
+  Future<String?> getTheme() {
+    return _storage.read(key: themeKey);
   }
 
   Future<void> clearTheme() async {

@@ -16,18 +16,23 @@ class PhotoUploadCard extends ConsumerWidget {
     return GestureDetector(
       onTap: onTap,
       child: DottedBorder(
-        options: const RoundedRectDottedBorderOptions(
+        options: RoundedRectDottedBorderOptions(
           dashPattern: [5, 5],
-          radius: Radius.circular(24),
-          color: Colors.grey,
-          padding: EdgeInsets.all(16),
+          radius: const Radius.circular(24),
+          color: context.colorScheme.shadow,
+          padding: const EdgeInsets.all(16),
         ),
         child: SizedBox(
           width: context.media.size.width / 2.4,
           height: context.media.size.width / 2.4,
           child: image != null
               ? Image.file(image!, fit: BoxFit.cover)
-              : Center(child: Image.asset(Assets.imagePlusIcon)),
+              : Center(
+                  child: Image.asset(
+                    Assets.imagePlusIcon,
+                    color: context.colorScheme.errorContainer,
+                  ),
+                ),
         ),
       ),
     );

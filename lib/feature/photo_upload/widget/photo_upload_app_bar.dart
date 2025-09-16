@@ -9,13 +9,14 @@ class PhotoUploadAppBar extends StatelessWidget
   final String text;
   @override
   Widget build(BuildContext context) {
+    final theme = context.colorScheme;
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
       title: Text(
         text,
         style: context.textTheme.headlineLarge?.copyWith(
-          color: Colors.white,
+          color: theme.errorContainer,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -23,14 +24,17 @@ class PhotoUploadAppBar extends StatelessWidget
       leading: FilledButton(
         onPressed: () => context.router.pop(),
         style: FilledButton.styleFrom(
-          backgroundColor: const Color(0xff440303),
+          backgroundColor: theme.surface,
           padding: AppPaddings.mediumVertical,
           shape: const RoundedRectangleBorder(
             borderRadius: AppRadius.medium,
-            side: BorderSide(color: Colors.grey, width: 0.7),
+            side: BorderSide(color: Colors.white, width: 0.7),
           ),
         ),
-        child: const Icon(Icons.arrow_back_outlined, color: Colors.white),
+        child: Icon(
+          Icons.arrow_back_outlined,
+          color: theme.errorContainer,
+        ),
       ),
     );
   }

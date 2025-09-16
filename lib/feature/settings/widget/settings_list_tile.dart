@@ -17,12 +17,15 @@ class SettingsListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(iconData, color: iconColor ?? Colors.white),
+      leading: Icon(
+        iconData,
+        color: iconColor ?? context.colorScheme.errorContainer,
+      ),
       title: Text(
         text,
         style: context.textTheme.headlineSmall?.copyWith(
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: context.colorScheme.errorContainer,
         ),
       ),
       onTap: onTap,

@@ -22,14 +22,16 @@ class LoginTitle extends StatelessWidget {
           LocaleKeys.sign_login.tr(),
           style: context.textTheme.displayMedium?.copyWith(
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: context.colorScheme.errorContainer,
           ),
         ),
         10.verticalSpace,
         Text(
           LocaleKeys.sing_with_your_info.tr(),
           textAlign: TextAlign.center,
-          style: context.textTheme.labelLarge?.copyWith(color: Colors.white),
+          style: context.textTheme.labelLarge?.copyWith(
+            color: context.colorScheme.errorContainer,
+          ),
         ),
       ],
     );

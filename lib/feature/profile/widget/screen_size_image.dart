@@ -26,6 +26,7 @@ class ScreenSizeImage extends ConsumerWidget {
       );
     }
     return CachedNetworkImage(
+      height: 50,
       imageUrl: imageUrl!.replaceFirst('http://', 'https://'),
       fit: BoxFit.cover,
       placeholder: (context, url) =>
@@ -41,10 +42,7 @@ class ScreenSizeImage extends ConsumerWidget {
             children: [
               Icon(Icons.error),
               SizedBox(height: CustomAppSizes.medium),
-              Text(
-                'Image could not be loaded',
-                textAlign: TextAlign.center,
-              ),
+              Text('Image could not loaded', textAlign: TextAlign.center),
             ],
           ),
         );

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/generated/assets.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
@@ -14,7 +15,10 @@ class AppNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(bottom: 24),
+      color: tabsRouter.activeIndex == 0
+          ? Colors.black
+          : context.colorScheme.onTertiary,
+      padding: const EdgeInsets.only(bottom: 16),
       child: _NavBarWidget(
         items: [
           NavBarModel(

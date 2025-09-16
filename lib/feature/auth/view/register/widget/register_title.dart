@@ -11,6 +11,7 @@ class RegisterTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.colorScheme;
     return Column(
       children: [
         20.verticalSpace,
@@ -22,14 +23,14 @@ class RegisterTitle extends StatelessWidget {
           LocaleKeys.sign_register.tr(),
           style: context.textTheme.displayMedium?.copyWith(
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: theme.errorContainer,
           ),
         ),
         10.verticalSpace,
         Text(
           LocaleKeys.sing_with_your_info.tr(),
           style: context.textTheme.headlineMedium?.copyWith(
-            color: Colors.white,
+            color: theme.errorContainer,
           ),
         ),
       ],

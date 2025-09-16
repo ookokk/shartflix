@@ -19,6 +19,7 @@ class LoginRegisterButton extends StatelessWidget {
       width: double.infinity,
       child: CustomButton(
         contentPadding: AppPaddings.medium,
+        bgColor: const Color(0xFFEC0909),
         text: Text(
           text,
           style: context.textTheme.headlineMedium?.copyWith(

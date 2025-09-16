@@ -14,13 +14,12 @@ class MainView extends ConsumerWidget {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.light,
       ),
     );
     return AutoTabsScaffold(
       animationCurve: Curves.easeInOut,
-      animationDuration: const Duration(milliseconds: 5000),
-      backgroundColor: Colors.transparent,
+      animationDuration: const Duration(seconds: 1),
       routes: const [ExploreRoute(), ProfileRoute()],
 
       bottomNavigationBuilder: (context, tabsRouter) {

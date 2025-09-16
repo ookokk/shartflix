@@ -12,7 +12,7 @@ class TermOfPrivacyButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isChecked = ref.watch(isTermApprovedProvider);
-
+    final theme = context.colorScheme;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -23,12 +23,12 @@ class TermOfPrivacyButton extends ConsumerWidget {
             width: 20,
             height: 20,
             decoration: BoxDecoration(
-              color: isChecked ? Colors.white : Colors.transparent,
-              border: Border.all(color: Colors.white),
+              color: isChecked ? theme.errorContainer : Colors.transparent,
+              border: Border.all(color: theme.errorContainer),
               borderRadius: BorderRadius.circular(4),
             ),
             child: isChecked
-                ? const Icon(Icons.check, size: 16, color: Colors.black)
+                ? Icon(Icons.check, size: 16, color: theme.onTertiary)
                 : null,
           ),
         ),
@@ -37,7 +37,7 @@ class TermOfPrivacyButton extends ConsumerWidget {
           child: RichText(
             text: TextSpan(
               style: context.textTheme.labelLarge?.copyWith(
-                color: Colors.white,
+                color: theme.errorContainer,
                 fontWeight: FontWeight.w100,
               ),
               text: LocaleKeys.sign_agreement_message.tr(),
@@ -46,15 +46,15 @@ class TermOfPrivacyButton extends ConsumerWidget {
                   text: ' ${LocaleKeys.sign_agreement_message_two.tr()}',
                   style: context.textTheme.labelLarge?.copyWith(
                     decoration: TextDecoration.underline,
-                    decorationColor: Colors.white,
+                    decorationColor: theme.errorContainer,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: theme.errorContainer,
                   ),
                 ),
                 TextSpan(
                   text: ' ${LocaleKeys.sign_agreement_message_three.tr()}',
                   style: context.textTheme.labelLarge?.copyWith(
-                    color: Colors.white,
+                    color: theme.errorContainer,
                     fontWeight: FontWeight.w100,
                   ),
                 ),

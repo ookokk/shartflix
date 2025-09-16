@@ -8,7 +8,7 @@ import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/feature/auth/controller/auth_view_model.dart';
 import 'package:shartflix/feature/photo_upload/widget/photo_upload_app_bar.dart';
 import 'package:shartflix/feature/settings/widget/change_language_dialog.dart';
-import 'package:shartflix/feature/settings/widget/change_theme_dialog.dart';
+import 'package:shartflix/feature/settings/widget/change_theme_list_tile.dart';
 import 'package:shartflix/feature/settings/widget/settings_divider.dart';
 import 'package:shartflix/feature/settings/widget/settings_list_tile.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
@@ -38,24 +38,19 @@ class SettingsView extends ConsumerWidget {
                 ),
 
                 const SettingsDivider(),
-                SettingsListTile(
-                  iconData: Icons.light_mode_sharp,
-                  text: LocaleKeys.theme_settings.tr(),
-                  onTap: () => ChangeThemeDialog().show(context),
-                ),
+                const ChangeThemeListTile(),
                 const SettingsDivider(),
                 SettingsListTile(
                   iconData: Icons.sign_language_outlined,
                   text: LocaleKeys.signOut.tr(),
-                  onTap: () =>
-                      QuestionAlert().show(
-                        context,
-                        onTap: () => AuthViewModel().signOut(context, ref),
-                        bodyText: LocaleKeys.areYouSureSignOut.tr(),
-                        buttonText: LocaleKeys.signOut.tr(),
-                        textColor: Colors.black87,
-                        bgColor: AlertDialogColors.warning,
-                      ),
+                  onTap: () => QuestionAlert().show(
+                    context,
+                    onTap: () => AuthViewModel().signOut(context, ref),
+                    bodyText: LocaleKeys.areYouSureSignOut.tr(),
+                    buttonText: LocaleKeys.signOut.tr(),
+                    textColor: Colors.black87,
+                    bgColor: AlertDialogColors.warning,
+                  ),
                 ),
               ],
             ),

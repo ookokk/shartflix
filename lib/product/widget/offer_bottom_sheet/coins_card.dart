@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
@@ -15,11 +14,10 @@ class CoinsCard extends StatelessWidget {
     return Column(
       spacing: CustomAppSizes.large,
       children: [
-        5.verticalSpace,
         Text(
           LocaleKeys.bottom_sheet_jeton_message.tr(),
           style: context.textTheme.headlineMedium?.copyWith(
-            color: Colors.white,
+            color: context.colorScheme.errorContainer,
             fontWeight: FontWeight.w500,
           ),
         ),

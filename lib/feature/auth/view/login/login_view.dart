@@ -29,7 +29,8 @@ class LoginView extends ConsumerStatefulWidget {
   ConsumerState<LoginView> createState() => LoginViewState();
 }
 
-class LoginViewState extends ConsumerState<LoginView> with _LoginViewMixin {
+class LoginViewState extends ConsumerState<LoginView>
+    with _LoginViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

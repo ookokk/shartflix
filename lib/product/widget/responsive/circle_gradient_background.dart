@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shartflix/core/const/extensions/context_extension.dart';
 
 class CircleGradientBackground extends StatelessWidget {
   const CircleGradientBackground({required this.child, super.key});
@@ -6,15 +7,16 @@ class CircleGradientBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.colorScheme;
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: RadialGradient(
           center: Alignment.topCenter,
           radius: 0.6,
-          colors: [Color(0xFFEC0909), Color(0xFF590606), Colors.black],
-          stops: [0.0, 0.3, 1.0],
+          colors: [theme.primary, theme.onPrimary, theme.secondary],
+          stops: const [0.0, 0.3, 1.0],
         ),
       ),
       child: child,

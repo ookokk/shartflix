@@ -5,52 +5,43 @@ import 'package:flutter_svg/svg.dart';
 import 'package:shartflix/core/const/enums/locale_enum.dart';
 import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/init/app_localization.dart';
-import 'package:shartflix/core/theme/theme_controller.dart';
 
 class DialogListTile extends ConsumerWidget {
   const DialogListTile({
     required this.context,
     required this.title,
+    required this.svgPath,
     this.locale,
-    this.svgPath,
-    this.iconData,
-    this.themeMode,
     super.key,
   });
 
   final BuildContext context;
   final Locales? locale;
-  final String? svgPath;
-  final IconData? iconData;
-  final ThemeMode? themeMode;
+  final String svgPath;
   final String title;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = ref.watch(themeProvider);
     return ListTile(
-      // tileColor: const Color(0XFF330505),
-      tileColor: theme.currentTheme.cardColor,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      tileColor: const Color(0XFF330505),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-      leading: svgPath != null
-          ? SvgPicture.asset(svgPath!, height: 30)
-          : Icon(iconData),
+      leading: SvgPicture.asset(svgPath, height: 30),
       title: Text(
         title,
-        style: context.textTheme.headlineSmall?.copyWith(color: Colors.white),
+        style: context.textTheme.headlineSmall?.copyWith(
+          color: Colors.white,
+        ),
       ),
       onTap: () async {
-        if (svgPath != null) {
-          await AppLocalization.updateLanguage(
-            this.context,
-            value: locale!,
-          ).then((value) {
-            this.context.router.pop();
-          });
-        } else {
-          await ref.read(themeProvider).setTheme(themeMode!);
-        }
+        await AppLocalization.updateLanguage(
+          this.context,
+          value: locale!,
+        ).then((value) {
+          this.context.router.pop();
+        });
       },
     );
   }

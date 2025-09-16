@@ -48,13 +48,16 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
                     LocaleKeys.favorite_movies.tr(),
                     style: context.textTheme.headlineLarge?.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: context.colorScheme.errorContainer,
                     ),
                   ),
                   IconButton(
                     onPressed: () =>
                         context.router.push(const SettingsRoute()),
-                    icon: const Icon(Icons.settings, color: Colors.white),
+                    icon: Icon(
+                      Icons.settings,
+                      color: context.colorScheme.errorContainer,
+                    ),
                   ),
                 ],
               ),

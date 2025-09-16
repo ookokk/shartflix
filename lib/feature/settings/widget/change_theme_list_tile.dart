@@ -31,7 +31,6 @@ class ChangeThemeListTile extends ConsumerWidget {
       trailing: CupertinoSwitch(
         activeColor: Colors.redAccent,
         value: isDark,
-
         onChanged: (value) async {
           ref
               .read(themeProvider.notifier)

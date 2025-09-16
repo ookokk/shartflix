@@ -15,6 +15,7 @@ mixin _LoginViewMixin on ConsumerState<LoginView> {
         email: _emailController.text,
         password: _passwordController.text,
       );
+
       if (res != null && res.response?.code == 200) {
         await context.router.pushAndPopUntil(
           const MainRoute(),
@@ -23,14 +24,10 @@ mixin _LoginViewMixin on ConsumerState<LoginView> {
       } else {
         final errorMsg =
             res?.response?.message ?? LocaleKeys.an_error_occurred.tr();
-        WarningAlert().show(
-          context,
-          errorMsg,
-          true,
-          AlertDialogColors.error,
-        );
+        WarningAlert().show(context, errorMsg, true, AlertDialogColors.error);
       }
     }
+    if (!mounted) return;
     WarningAlert().show(
       context,
       LocaleKeys.sign_password_not_match.tr(),

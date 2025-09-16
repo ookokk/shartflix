@@ -22,9 +22,12 @@ class ProfileViewModel extends StateNotifier<ProfileState> {
       state = state.copyWith(isError: true, isLoading: false);
     }
   }
+
+  void cleanState() {
+    state = ProfileState();
+  }
 }
 
-final profileProvider =
-    StateNotifierProvider<ProfileViewModel, ProfileState>(
-      (ref) => ProfileViewModel(),
-    );
+final profileProvider = StateNotifierProvider<ProfileViewModel, ProfileState>(
+  (ref) => ProfileViewModel(),
+);

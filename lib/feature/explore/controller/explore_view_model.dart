@@ -67,18 +67,23 @@ class ExploreViewModel extends StateNotifier<ExploreState> {
   void setCurrentIndex(int index) {
     state = state.copyWith(currentIndex: index);
   }
+
+  void cleanState() {
+    state = ExploreState();
+  }
 }
 
-final exploreProvider =
-    StateNotifierProvider<ExploreViewModel, ExploreState>(
-      (ref) => ExploreViewModel(),
-    );
+final exploreProvider = StateNotifierProvider<ExploreViewModel, ExploreState>(
+  (ref) => ExploreViewModel(),
+);
 
-final exploreFutureProvider = FutureProvider.autoDispose.family<bool, int>(
-  (ref, page) async {
-    final success = await ref
-        .read(exploreProvider.notifier)
-        .fetchMovies(page: page);
-    return success;
-  },
+final exploreFutureProvider = FutureProvider.autoDispose.family<bool, int>((
+  ref,
+  page,
+) async {
+  final success = await ref
+      .read(exploreProvider.notifier)
+      .fetchMovies(page: page);
+  return success;
+}
 );

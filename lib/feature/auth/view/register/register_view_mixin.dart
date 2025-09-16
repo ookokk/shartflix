@@ -18,6 +18,7 @@ mixin _RegisterViewMixin on ConsumerState<RegisterView> {
         email: _emailController.text,
         password: _passwordController.text,
       );
+      if (!mounted) return;
       if (res != null &&
           (res.response?.code == 201 || res.response?.code == 200)) {
         await context.router.pushAndPopUntil(
@@ -27,14 +28,10 @@ mixin _RegisterViewMixin on ConsumerState<RegisterView> {
       } else {
         final errorMsg =
             res?.response?.message ?? LocaleKeys.an_error_occurred.tr();
-        WarningAlert().show(
-          context,
-          errorMsg,
-          true,
-          AlertDialogColors.error,
-        );
+        WarningAlert().show(context, errorMsg, true, AlertDialogColors.error);
       }
     } else {
+      if (!mounted) return;
       WarningAlert().show(
         context,
         LocaleKeys.sign_password_not_match.tr(),

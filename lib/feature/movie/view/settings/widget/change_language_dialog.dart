@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shartflix/core/const/enums/locale_enum.dart';
-import 'package:shartflix/feature/settings/widget/dialog_list_tile.dart';
+import 'package:shartflix/feature/movie/view/settings/widget/dialog_list_tile.dart';
 import 'package:shartflix/generated/assets.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
 

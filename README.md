@@ -32,21 +32,30 @@ lib/
 ├── bootstrap.dart
 ├── main.dart
 ├── core/
-│ ├── const
-│ ├── init
-│ ├── router
-│ ├── theme
-│ └── util
+│   ├── const/
+│   ├── init/
+│   ├── router/
+│   ├── theme/
+│   └── util/
 ├── feature/
-│ ├── auth
-│ ├── explore
-│ ├── photo_upload
-│ ├── profile
-│ └── settings
+│   ├── auth/
+│   │   ├── app/
+│   │   ├── data/
+│   │   ├── domain/
+│   │   └── view/
+│   └── movie/
+│       ├── app/
+│       ├── data/
+│       ├── domain/
+│       └── view/
 ├── product/
-│ ├── model
-│ ├── service
-│ └── widget
+│   ├── model/
+│   │   ├── auth/
+│   │   ├── base/
+│   │   ├── movie/
+│   │   └── user/
+│   └── widget/
+
 
 ```
 

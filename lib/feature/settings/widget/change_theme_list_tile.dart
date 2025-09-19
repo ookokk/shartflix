@@ -15,7 +15,6 @@ class ChangeThemeListTile extends ConsumerWidget {
     final colors = context.colorScheme;
     final theme = ref.watch(themeProvider);
     final isDark = theme.brightness == Brightness.dark;
-
     return ListTile(
       leading: Icon(
         Icons.dark_mode_outlined,

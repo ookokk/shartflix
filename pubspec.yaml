@@ -30,6 +30,7 @@ dependencies:
   kartal: ^4.2.0
   logger: ^2.6.1
   lottie: ^3.3.2
+  mocktail: ^1.0.4
   path_provider: ^2.1.5
   permission_handler: ^11.3.1
 

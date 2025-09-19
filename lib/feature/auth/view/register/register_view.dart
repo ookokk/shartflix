@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
+import 'package:shartflix/core/init/cache_manager.dart';
+import 'package:shartflix/core/init/network_manager.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
-import 'package:shartflix/feature/auth/controller/auth_view_model.dart';
+import 'package:shartflix/feature/auth/app/view_model/auth_view_model.dart';
+import 'package:shartflix/feature/auth/data/auth_service_impl.dart';
+import 'package:shartflix/feature/auth/domain/auth_use_case.dart';
 import 'package:shartflix/feature/auth/view/login/widget/go_to_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/social_sign_buttons.dart';
@@ -25,6 +29,10 @@ class RegisterView extends ConsumerWidget {
     final emailCnt = TextEditingController();
     final nameCnt = TextEditingController();
     final passwordCnt = TextEditingController();
+    final authUseCase = AuthUseCase(
+      AuthServiceImpl(NetworkManager.instance, CacheManager.instance),
+    );
+    final authViewModel = AuthViewModel(authUseCase);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -49,7 +57,7 @@ class RegisterView extends ConsumerWidget {
                 5.verticalSpace,
                 LoginRegisterButton(
                   text: LocaleKeys.sign_register.tr(),
-                  onPressed: () => AuthViewModel().register(
+                  onPressed: () => authViewModel.register(
                     context,
                     ref,
                     formKey,

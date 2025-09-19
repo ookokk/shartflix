@@ -5,8 +5,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shartflix/core/const/enums/alert_dialog_colors.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
-import 'package:shartflix/feature/auth/controller/auth_view_model.dart';
-import 'package:shartflix/feature/photo_upload/widget/photo_upload_app_bar.dart';
+import 'package:shartflix/core/init/cache_manager.dart';
+import 'package:shartflix/core/init/network_manager.dart';
+import 'package:shartflix/feature/auth/app/view_model/auth_view_model.dart';
+import 'package:shartflix/feature/auth/data/auth_service_impl.dart';
+import 'package:shartflix/feature/auth/domain/auth_use_case.dart';
+import 'package:shartflix/feature/auth/view/photo_upload/widget/photo_upload_app_bar.dart';
 import 'package:shartflix/feature/settings/widget/change_language_dialog.dart';
 import 'package:shartflix/feature/settings/widget/change_theme_list_tile.dart';
 import 'package:shartflix/feature/settings/widget/settings_divider.dart';
@@ -21,6 +25,10 @@ class SettingsView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final authUseCase = AuthUseCase(
+      AuthServiceImpl(NetworkManager.instance, CacheManager.instance),
+    );
+    final authViewModel = AuthViewModel(authUseCase);
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: PhotoUploadAppBar(text: LocaleKeys.settings_appbar.tr()),
@@ -45,7 +53,7 @@ class SettingsView extends ConsumerWidget {
                   text: LocaleKeys.signOut.tr(),
                   onTap: () => QuestionAlert().show(
                     context,
-                    onTap: () => AuthViewModel().signOut(context, ref),
+                    onTap: () => authViewModel.signOut(context, ref),
                     bodyText: LocaleKeys.areYouSureSignOut.tr(),
                     buttonText: LocaleKeys.signOut.tr(),
                     textColor: Colors.black87,

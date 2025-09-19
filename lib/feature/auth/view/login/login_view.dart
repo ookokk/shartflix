@@ -5,8 +5,12 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
+import 'package:shartflix/core/init/cache_manager.dart';
+import 'package:shartflix/core/init/network_manager.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
-import 'package:shartflix/feature/auth/controller/auth_view_model.dart';
+import 'package:shartflix/feature/auth/app/view_model/auth_view_model.dart';
+import 'package:shartflix/feature/auth/data/auth_service_impl.dart';
+import 'package:shartflix/feature/auth/domain/auth_use_case.dart';
 import 'package:shartflix/feature/auth/view/login/widget/go_to_register_button.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_form.dart';
 import 'package:shartflix/feature/auth/view/login/widget/login_movies_lottie.dart';
@@ -26,6 +30,10 @@ class LoginView extends ConsumerWidget {
     final formKey = GlobalKey<FormState>();
     final emailCnt = TextEditingController();
     final passwordCnt = TextEditingController();
+    final authUseCase = AuthUseCase(
+      AuthServiceImpl(NetworkManager.instance, CacheManager.instance),
+    );
+    final authViewModel = AuthViewModel(authUseCase);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: CircleGradientBackground(
@@ -46,7 +54,7 @@ class LoginView extends ConsumerWidget {
                   ),
                   const ResetPassword(),
                   LoginRegisterButton(
-                    onPressed: () => AuthViewModel().login(
+                    onPressed: () => authViewModel.login(
                       context,
                       ref,
                       formKey,

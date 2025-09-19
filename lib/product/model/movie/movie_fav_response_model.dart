@@ -18,10 +18,8 @@ class MovieFavResponseModel with _$MovieFavResponseModel {
 
 @freezed
 class MovieFavDataModel with _$MovieFavDataModel {
-  factory MovieFavDataModel({
-    MovieModel? movie,
-    String? action, // favorited // unfavorited
-  }) = _MovieFavDataModel;
+  factory MovieFavDataModel({MovieModel? movie, String? action}) =
+      _MovieFavDataModel;
 
   factory MovieFavDataModel.fromJson(Map<String, dynamic> json) =>
       _$MovieFavDataModelFromJson(json);

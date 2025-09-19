@@ -11,12 +11,13 @@
 import 'package:auto_route/auto_route.dart' as _i10;
 import 'package:flutter/material.dart' as _i11;
 import 'package:shartflix/feature/auth/view/login/login_view.dart' as _i2;
+import 'package:shartflix/feature/auth/view/photo_upload/photo_upload_view.dart'
+    as _i5;
 import 'package:shartflix/feature/auth/view/register/register_view.dart' as _i7;
 import 'package:shartflix/feature/auth/view/splash/splash_view.dart' as _i9;
-import 'package:shartflix/feature/explore/explore_view.dart' as _i1;
 import 'package:shartflix/feature/main_view.dart' as _i3;
-import 'package:shartflix/feature/photo_upload/photo_upload_view.dart' as _i5;
-import 'package:shartflix/feature/profile/profile_view.dart' as _i6;
+import 'package:shartflix/feature/movie/view/explore/explore_view.dart' as _i1;
+import 'package:shartflix/feature/movie/view/profile/profile_view.dart' as _i6;
 import 'package:shartflix/feature/settings/settings_view.dart' as _i8;
 import 'package:shartflix/product/widget/responsive/no_connection_view.dart'
     as _i4;

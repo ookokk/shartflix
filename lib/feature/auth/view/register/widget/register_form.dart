@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/core/util/sign_validator.dart';
-import 'package:shartflix/feature/auth/view/widget/custom_text_field.dart';
+import 'package:shartflix/feature/auth/view/login/widget/custom_text_field.dart';
 import 'package:shartflix/generated/assets.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
 

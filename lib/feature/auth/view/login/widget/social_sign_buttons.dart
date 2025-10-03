@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
-import 'package:shartflix/feature/auth/view/widget/seperator_list_widget.dart';
+import 'package:shartflix/feature/auth/view/login/widget/separator_list_widget.dart';
 import 'package:shartflix/generated/assets.dart';
 
 class SocialSignButtons extends StatelessWidget {

@@ -11,13 +11,7 @@ import 'package:shartflix/core/router/app_router.gr.dart';
 import 'package:shartflix/feature/auth/app/view_model/auth_view_model.dart';
 import 'package:shartflix/feature/auth/data/auth_service_impl.dart';
 import 'package:shartflix/feature/auth/domain/auth_use_case.dart';
-import 'package:shartflix/feature/auth/view/login/widget/go_to_register_button.dart';
-import 'package:shartflix/feature/auth/view/login/widget/login_form.dart';
-import 'package:shartflix/feature/auth/view/login/widget/login_movies_lottie.dart';
-import 'package:shartflix/feature/auth/view/login/widget/login_register_button.dart';
-import 'package:shartflix/feature/auth/view/login/widget/login_title.dart';
-import 'package:shartflix/feature/auth/view/login/widget/reset_password.dart';
-import 'package:shartflix/feature/auth/view/login/widget/social_sign_buttons.dart';
+import 'package:shartflix/feature/auth/view/login/widget/login_widgets.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
 import 'package:shartflix/product/widget/responsive/circle_gradient_background.dart';
 

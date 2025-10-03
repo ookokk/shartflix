@@ -7,10 +7,7 @@ import 'package:shartflix/core/const/extensions/context_extension.dart';
 import 'package:shartflix/core/const/extensions/custom_app_sizes.dart';
 import 'package:shartflix/core/router/app_router.gr.dart';
 import 'package:shartflix/feature/auth/app/view_model/photo_upload_view_model.dart';
-import 'package:shartflix/feature/auth/view/photo_upload/widget/photo_upload_app_bar.dart';
-import 'package:shartflix/feature/auth/view/photo_upload/widget/photo_upload_button.dart';
-import 'package:shartflix/feature/auth/view/photo_upload/widget/photo_upload_card.dart';
-import 'package:shartflix/feature/auth/view/photo_upload/widget/photo_upload_title.dart';
+import 'package:shartflix/feature/auth/view/photo_upload/widget/photo_uploads_widgets.dart';
 import 'package:shartflix/generated/locale_keys.g.dart';
 import 'package:shartflix/product/widget/responsive/circle_gradient_background.dart';
 
